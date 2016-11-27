@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Магазин</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="|-head">
+	<div class="logo"><img src="" alt=""></div>
+	<div class="main_title">
+		<h1>Интернет Витрина</h1>
+	</div>
+</header>
+
+<section>
+	<!--=============================
+	=            Filters            =
+	==============================-->
+	<aside class="|-sidebar">
+		<div class="accordion" id="filters">
+		<!--===================================
+		=            Mobile filter            =
+		====================================-->
+		
+			<div class="accordion-header"><a href="#item-1" id="mobile">
+					<h3>Мобильные телефоны</h3>
+				</a></div>
+			<form method = POST class="accordion-content" id="item-1">
+				<div class="chek-container">
+					
+					<div class="companie">
+						<h4>Производитель</h4>
+						<input type="checkbox" name="mob-companie-1" id="">
+						<label for="mob-companie-1">Asus</label>
+						<input type="checkbox" name="mob-companie-2" id="">
+						<label for="mob-companie-2">Nokia</label>
+						<input type="checkbox" name="mob-companie-3" id="">
+						<label for="mob-companie-3">Samsung</label>
+						<input type="checkbox" name="mob-companie-4" id="">
+						<label for="mob-companie-4">LG</label>
+					</div>
+					<div class="screen">
+						<h4>Диагональ</h4>
+						<input type="checkbox" name="mob-screen-1" id="">
+						<label for="mob-screen-1">до 4’’</label>
+						<input type="checkbox" name="mob-screen-2" id="">
+						<label for="mob-screen-2">4.1’’ - 5’’</label>
+						<input type="checkbox" name="mob-screen-3" id="">
+						<label for="mob-screen-3">5.1’’ - 6’’</label>
+						<input type="checkbox" name="mob-screen-4" id="">
+						<label for="mob-screen-4">6.1’’ &gt;</label>
+					</div>
+					<div class="ram">
+						<h4>Оперативная память</h4>
+						<input type="checkbox" name="mob-ram-1" id="">
+						<label for="mob-ram-1">1 ГБ</label>
+						<input type="checkbox" name="mob-ram-2" id="">
+						<label for="mob-ram-2">1 - 2 ГБ</label>
+						<input type="checkbox" name="mob-ram-3" id="">
+						<label for="mob-ram-3">2 - 4 ГБ</label>
+						<input type="checkbox" name="mob-ram-4" id="">
+						<label for="mob-ram-4">4 ГБ &gt;</label>
+					</div>
+					<div class="color">
+						<h4>Цвет</h4>
+						<input type="radio" name="mob-color-1" id="">
+						<label for="mob-color-1">Черный</label>
+						<input type="radio" name="mob-color-2" id="">
+						<label for="mob-color-2">Красный</label>
+						<input type="radio" name="mob-color-3" id="">
+						<label for="mob-color-3">Белый</label>
+						<input type="radio" name="mob-color-4" id="">
+						<label for="mob-color-4">Серебристый</label>
+					</div>
+				</div>
+				<div class="price-container">
+					<h4>Цена</h4>
+					<div class="input-container"><label for="">Максимальная</label><input type="text" name="" id="" class="price_max"></div>
+					<div class="input-container"><label for="">Минимальная</label><input type="text" name="" id="" class="price_min"></div>
+				</div>
+				<button type="submit" class="show">Показать</button>
+			</form>
+			<!--====  End of Mobile filter   ====-->
+			
+
+			<!--===================================
+			=            Tablets Filter            =
+			====================================-->
+			
+			<div class="accordion-header"><a href="#item-2" id="tablets">
+					<h3>Планшеты</h3>
+				</a>
+			</div>
+			<form method = POST class="accordion-content" id="item-2">
+				<div class="chek-container">
+					<div class="companie">
+						<h4>Производитель</h4>
+						<input type="checkbox" name="tabl-companie-1" id="">
+						<label for="tabl-companie-1">Asus</label>
+						<input type="checkbox" name="tabl-companie-2" id="">
+						<label for="tabl-companie-2">Lenova</label>
+						<input type="checkbox" name="tabl-companie-3" id="">
+						<label for="tabl-companie-3">Samsung</label>
+						<input type="checkbox" name="tabl-companie-4" id="">
+						<label for="tabl-companie-4">Prestigio</label>
+					</div>
+					<div class="screen">
+						<h4>Диагональ</h4>
+						<input type="checkbox" name="tabl-screen-1" id="">
+						<label for="tabl-screen-1">6’’ - 7.7’’</label>
+						<input type="checkbox" name="tabl-screen-2" id="">
+						<label for="tabl-screen-2">7.85’’ - 9.55’’</label>
+						<input type="checkbox" name="tabl-screen-3" id="">
+						<label for="tabl-screen-3">9.6’’ - 10.1’’</label>
+					</div>
+					<div class="memory">
+						<h4>Встроенная память</h4>
+						<input type="checkbox" name="tabl-memory-1" id="">
+						<label for="tabl-memory-1">&lt; 4 ГБ</label>
+						<input type="checkbox" name="tabl-memory-2" id="">
+						<label for="tabl-memory-2">4 ГБ</label>
+						<input type="checkbox" name="tabl-memory-3" id="">
+						<label for="tabl-memory-3">16 ГБ</label>
+						<input type="checkbox" name="tabl-memory-4" id="">
+						<label for="tabl-memory-4">32 ГБ</label>
+					</div>
+					<div class="color">
+						<h4>Цвет</h4>
+						<input type="radio" name="tabl-color-1" id="">
+						<label for="tabl-color-1">Черный</label>
+						<input type="radio" name="tabl-color-2" id="">
+						<label for="tabl-color-2">Красный</label>
+						<input type="radio" name="tabl-color-3" id="">
+						<label for="tabl-color-3">Белый</label>
+						<input type="radio" name="tabl-color-4" id="">
+						<label for="tabl-color-4">Серебристый</label>
+					</div>
+				</div>
+				<div class="price-container">
+					<h4>Цена</h4>
+					<div class="input-container"><label for="">Максимальная</label><input type="text" name="" id="" class="price_max"></div>
+					<div class="input-container"><label for="">Минимальная</label><input type="text" name="" id="" class="price_min"></div>
+				</div>
+				<button type="submit" class="show">Показать</button>
+			</form>
+			<!--====  End of Tablets Filter  ====-->
+
+
+			<!--====================================
+			=            Laptops filter            =
+			=====================================-->
+			
+			<div class="accordion-header"><a href="#item-3" id="laptops">
+					<h3>Ноутбуки</h3>
+				</a>
+			</div>
+			<form method = POST class="accordion-content" id="item-3">
+				<div class="chek-container">
+					<div class="companie">
+						<h4>Производитель</h4>
+						<input type="checkbox" name="lapt-companie-1" id="">
+						<label for="lapt-companie-1">Acer</label>
+						<input type="checkbox" name="lapt-companie-2" id="">
+						<label for="lapt-companie-2">Apple</label>
+						<input type="checkbox" name="lapt-companie-3" id="">
+						<label for="lapt-companie-3">Asus</label>
+						<input type="checkbox" name="lapt-companie-4" id="">
+						<label for="lapt-companie-4">Lenova</label>
+					</div>
+					<div class="proc">
+						<h4>Процессор</h4>
+						<input type="checkbox" name="lapt-proc-1" id="">
+						<label for="lapt-proc-1">Intel Core i7</label>
+						<input type="checkbox" name="lapt-proc-2" id="">
+						<label for="lapt-proc-2">Intel Core i5</label>
+						<input type="checkbox" name="lapt-proc-3" id="">
+						<label for="lapt-proc-3">Intel Core i3</label>
+						<input type="checkbox" name="lapt-proc-4" id="">
+						<label for="lapt-proc-4">AMD A6</label>
+					</div>
+					<div class="core">
+						<h4>Количество ядер</h4>
+						<input type="checkbox" name="lapt-core-1" id="">
+						<label for="lapt-core-1">2</label>
+						<input type="checkbox" name="lapt-core-2" id="">
+						<label for="lapt-core-2">4</label>
+					</div>
+					<div class="memory">
+						<h4>Оперативная память</h4>
+						<input type="checkbox" name="lapt-memory-1" id="">
+						<label for="lapt-memory-1">до 4 ГБ</label>
+						<input type="checkbox" name="lapt-memory-2" id="">
+						<label for="lapt-memory-2">4-6 ГБ</label>
+						<input type="checkbox" name="lapt-memory-3" id="">
+						<label for="lapt-memory-3">6 ГБ и более</label>
+					</div>
+					<div class="color">
+						<h4>Оперативная память</h4>
+						<input type="radio" name="lapt-color-1" id="">
+						<label for="lapt-color-1">Черный</label>
+						<input type="radio" name="lapt-color-2" id="">
+						<label for="lapt-color-2">Красный</label>
+						<input type="radio" name="lapt-color-3" id="">
+						<label for="lapt-color-3">Белый</label>
+						<input type="radio" name="lapt-color-4" id="">
+						<label for="lapt-color-4">Серебристый</label>
+					</div>
+				</div>
+				<div class="price-container">
+					<h4>Цена</h4>
+					<div class="input-container"><label for="">Максимальная</label><input type="text" name="" id="" class="price_max"></div>
+					<div class="input-container"><label for="">Минимальная</label><input type="text" name="" id="" class="price_min"></div>
+				</div>
+				<button type="submit" class="show">Показать</button>
+			</form>
+			<!--====  End of Laptops filter  ====-->
+		</div>
+
+		<!--====================================
+		=            Feed Back Form            =
+		=====================================-->
+
+		<form action="mail.php" method="post" class="feed_back_form">
+			<div class="input_container">
+				<label for="">Имя</label>
+				<input type="text" name="client_name" id="" class="client_name">
+			</div>
+			<div class="input_container">
+				<label for="">Email</label>
+				<input type="text" name="client_email" id="" class="client_email">
+			</div>
+			<h4>Цель</h4>
+			<div class="input_container">
+				<input type="radio" name="buy" id="" value="buy">
+				<label for="buy">Покупка</label>
+			</div>
+			<div class="input_container">
+				<input type="radio" name="buy" id="" value="buy">
+				<label for="buy">Покупка</label>
+			</div>
+			<h4>Сообщение</h4>
+			<textarea name="client_message" id="" cols="30" rows="10" class="client_message"></textarea>
+			<button type="submit" class="feed_back_btn btn">Отправить</button>
+		</form>
+		
+		<!--====  End of Feed Back Form  ====-->
+		
+	</aside>
+	<!--====  End of Filters  ====-->
+	
+	<article id="main_content" class="|-main_content">
+
+		<ul>
+			<li class="poduct">
+				<div class="product_view">
+					<img src="products/comp_black.jpg" alt="">
+				</div>
+				<div class="product_text">
+					<div class="product_name">
+						<span class="product_title">Наименование:</span>
+						<span class="name">Samsung grand 2</span>
+					</div>
+					<div class="product_companie">
+						<span class="product_title">Производитель:</span>
+						<span class="companie">Samsung</span>
+					</div>
+					<div class="product_screen">
+						<span class="product_title">Диагональ экрана:</span>
+						<span class="screen">2</span>
+					</div>
+					<div class="product_ram">
+						<span class="product_title">Оперативная память:</span>
+						<span class="ram">2 ГБ</span>
+					</div>
+					<div class="product_color">
+						<span class="product_title">Цвет:</span>
+						<span class="ram">черный</span>
+					</div>
+					<div class="product_description">
+						<span class="product_title">Описание товара:</span>
+						<p class="description">Lorem ipsum dolor sit amet.</p>
+					</div>
+					<div class="product_price">
+						<span class="product_title">Цена:</span>
+						<span class="price">160$</span>
+					</div>
+				</div>
+			</li>
+			<li class="poduct">
+				<div class="product_view">
+					<img src="products/comp_black.jpg" alt="">
+				</div>
+				<div class="product_text">
+					<div class="product_name">
+						<span class="product_title">Наименование:</span>
+						<span class="name">Samsung grand 2</span>
+					</div>
+					<div class="product_companie">
+						<span class="product_title">Производитель:</span>
+						<span class="companie">Samsung</span>
+					</div>
+					<div class="product_screen">
+						<span class="product_title">Диагональ экрана:</span>
+						<span class="screen">2</span>
+					</div>
+					<div class="product_ram">
+						<span class="product_title">Оперативная память:</span>
+						<span class="ram">2 ГБ</span>
+					</div>
+					<div class="product_color">
+						<span class="product_title">Цвет:</span>
+						<span class="ram">черный</span>
+					</div>
+					<div class="product_description">
+						<span class="product_title">Описание товара:</span>
+						<p class="description">Lorem ipsum dolor sit amet.</p>
+					</div>
+					<div class="product_price">
+						<span class="product_title">Цена:</span>
+						<span class="price">160$</span>
+					</div>
+				</div>
+			</li>
+			<li class="poduct">
+				<div class="product_view">
+					<img src="products/comp_black.jpg" alt="">
+				</div>
+				<div class="product_text">
+					<div class="product_name">
+						<span class="product_title">Наименование:</span>
+						<span class="name">Samsung grand 2</span>
+					</div>
+					<div class="product_companie">
+						<span class="product_title">Производитель:</span>
+						<span class="companie">Samsung</span>
+					</div>
+					<div class="product_screen">
+						<span class="product_title">Диагональ экрана:</span>
+						<span class="screen">2</span>
+					</div>
+					<div class="product_ram">
+						<span class="product_title">Оперативная память:</span>
+						<span class="ram">2 ГБ</span>
+					</div>
+					<div class="product_color">
+						<span class="product_title">Цвет:</span>
+						<span class="ram">черный</span>
+					</div>
+					<div class="product_description">
+						<span class="product_title">Описание товара:</span>
+						<p class="description">Lorem ipsum dolor sit amet.</p>
+					</div>
+					<div class="product_price">
+						<span class="product_title">Цена:</span>
+						<span class="price">160$</span>
+					</div>
+				</div>
+			</li>
+			<li class="poduct">
+				<div class="product_view">
+					<img src="products/comp_black.jpg" alt="">
+				</div>
+				<div class="product_text">
+					<div class="product_name">
+						<span class="product_title">Наименование:</span>
+						<span class="name">Samsung grand 2</span>
+					</div>
+					<div class="product_companie">
+						<span class="product_title">Производитель:</span>
+						<span class="companie">Samsung</span>
+					</div>
+					<div class="product_screen">
+						<span class="product_title">Диагональ экрана:</span>
+						<span class="screen">2</span>
+					</div>
+					<div class="product_ram">
+						<span class="product_title">Оперативная память:</span>
+						<span class="ram">2 ГБ</span>
+					</div>
+					<div class="product_color">
+						<span class="product_title">Цвет:</span>
+						<span class="ram">черный</span>
+					</div>
+					<div class="product_description">
+						<span class="product_title">Описание товара:</span>
+						<p class="description">Lorem ipsum dolor sit amet.</p>
+					</div>
+					<div class="product_price">
+						<span class="product_title">Цена:</span>
+						<span class="price">160$</span>
+					</div>
+				</div>
+			</li>
+			<li class="poduct">
+				<div class="product_view"><img src="" alt=""></div>
+				<div class="product_text">
+					<div class="product_name"><span class="product_title">Наименование:</span><span class="name">Samsung grand 2</span></div>
+					<div class="product_companie"><span class="product_title">Производитель:</span><span class="companie">Samsung</span></div>
+					<div class="product_screen"><span class="product_title">Диагональ экрана:</span><span class="screen">2</span></div>
+					<div class="product_ram"><span class="product_title">Оперативная память:</span><span class="ram">2 ГБ</span></div>
+					<div class="product_color"><span class="product_title">Цвет:</span><span class="ram">черный</span></div>
+					<div class="product_description">
+						<span class="product_title">Описание товара:</span>
+						<p class="description">Doloremque dicta ipsum culpa adipisci!</p>
+					</div>
+					<div class="product_price"><span class="product_title">Цена:</span><span class="price">1605</span></div>
+				</div>
+			</li>
+			<li class="poduct">
+				<div class="product_view">
+					<img src="products/comp_black.jpg" alt="">
+				</div>
+				<div class="product_text">
+					<div class="product_name">
+						<span class="product_title">Наименование:</span>
+						<span class="name">Samsung grand 2</span>
+					</div>
+					<div class="product_companie">
+						<span class="product_title">Производитель:</span>
+						<span class="companie">Samsung</span>
+					</div>
+					<div class="product_screen">
+						<span class="product_title">Диагональ экрана:</span>
+						<span class="screen">2</span>
+					</div>
+					<div class="product_ram">
+						<span class="product_title">Оперативная память:</span>
+						<span class="ram">2 ГБ</span>
+					</div>
+					<div class="product_color">
+						<span class="product_title">Цвет:</span>
+						<span class="ram">черный</span>
+					</div>
+					<div class="product_description">
+						<span class="product_title">Описание товара:</span>
+						<p class="description">Lorem ipsum dolor sit amet.</p>
+					</div>
+					<div class="product_price">
+						<span class="product_title">Цена:</span>
+						<span class="price">160$</span>
+					</div>
+				</div>
+			</li>
+			<li class="poduct">
+				<div class="product_view">
+					<img src="products/comp_black.jpg" alt="">
+				</div>
+				<div class="product_text">
+					<div class="product_name">
+						<span class="product_title">Наименование:</span>
+						<span class="name">Samsung grand 2</span>
+					</div>
+					<div class="product_companie">
+						<span class="product_title">Производитель:</span>
+						<span class="companie">Samsung</span>
+					</div>
+					<div class="product_screen">
+						<span class="product_title">Диагональ экрана:</span>
+						<span class="screen">2</span>
+					</div>
+					<div class="product_ram">
+						<span class="product_title">Оперативная память:</span>
+						<span class="ram">2 ГБ</span>
+					</div>
+					<div class="product_color">
+						<span class="product_title">Цвет:</span>
+						<span class="ram">черный</span>
+					</div>
+					<div class="product_description">
+						<span class="product_title">Описание товара:</span>
+						<p class="description">Lorem ipsum dolor sit amet.</p>
+					</div>
+					<div class="product_price">
+						<span class="product_title">Цена:</span>
+						<span class="price">160$</span>
+					</div>
+				</div>
+			</li>
+			<li class="poduct">
+				<div class="product_view">
+					<img src="products/comp_black.jpg" alt="">
+				</div>
+				<div class="product_text">
+					<div class="product_name">
+						<span class="product_title">Наименование:</span>
+						<span class="name">Samsung grand 2</span>
+					</div>
+					<div class="product_companie">
+						<span class="product_title">Производитель:</span>
+						<span class="companie">Samsung</span>
+					</div>
+					<div class="product_screen">
+						<span class="product_title">Диагональ экрана:</span>
+						<span class="screen">2</span>
+					</div>
+					<div class="product_ram">
+						<span class="product_title">Оперативная память:</span>
+						<span class="ram">2 ГБ</span>
+					</div>
+					<div class="product_color">
+						<span class="product_title">Цвет:</span>
+						<span class="ram">черный</span>
+					</div>
+					<div class="product_description">
+						<span class="product_title">Описание товара:</span>
+						<p class="description">Lorem ipsum dolor sit amet.</p>
+					</div>
+					<div class="product_price">
+						<span class="product_title">Цена:</span>
+						<span class="price">160$</span>
+					</div>
+				</div>
+			</li>
+			<li class="poduct">
+				<div class="product_view">
+					<img src="products/comp_black.jpg" alt="">
+				</div>
+				<div class="product_text">
+					<div class="product_name">
+						<span class="product_title">Наименование:</span>
+						<span class="name">Samsung grand 2</span>
+					</div>
+					<div class="product_companie">
+						<span class="product_title">Производитель:</span>
+						<span class="companie">Samsung</span>
+					</div>
+					<div class="product_screen">
+						<span class="product_title">Диагональ экрана:</span>
+						<span class="screen">2</span>
+					</div>
+					<div class="product_ram">
+						<span class="product_title">Оперативная память:</span>
+						<span class="ram">2 ГБ</span>
+					</div>
+					<div class="product_color">
+						<span class="product_title">Цвет:</span>
+						<span class="ram">черный</span>
+					</div>
+					<div class="product_description">
+						<span class="product_title">Описание товара:</span>
+						<p class="description">Lorem ipsum dolor sit amet.</p>
+					</div>
+					<div class="product_price">
+						<span class="product_title">Цена:</span>
+						<span class="price">160$</span>
+					</div>
+				</div>
+			</li>
+			<li class="poduct">
+				<div class="product_view">
+					<img src="products/comp_black.jpg" alt="">
+				</div>
+				<div class="product_text">
+					<div class="product_name">
+						<span class="product_title">Наименование:</span>
+						<span class="name">Samsung grand 2</span>
+					</div>
+					<div class="product_companie">
+						<span class="product_title">Производитель:</span>
+						<span class="companie">Samsung</span>
+					</div>
+					<div class="product_screen">
+						<span class="product_title">Диагональ экрана:</span>
+						<span class="screen">2</span>
+					</div>
+					<div class="product_ram">
+						<span class="product_title">Оперативная память:</span>
+						<span class="ram">2 ГБ</span>
+					</div>
+					<div class="product_color">
+						<span class="product_title">Цвет:</span>
+						<span class="ram">черный</span>
+					</div>
+					<div class="product_description">
+						<span class="product_title">Описание товара:</span>
+						<p class="description">Lorem ipsum dolor sit amet.</p>
+					</div>
+					<div class="product_price">
+						<span class="product_title">Цена:</span>
+						<span class="price">160$</span>
+					</div>
+				</div>
+			</li>
+			<li class="poduct">
+				<div class="product_view">
+					<img src="products/comp_black.jpg" alt="">
+				</div>
+				<div class="product_text">
+					<div class="product_name">
+						<span class="product_title">Наименование:</span>
+						<span class="name">Samsung grand 2</span>
+					</div>
+					<div class="product_companie">
+						<span class="product_title">Производитель:</span>
+						<span class="companie">Samsung</span>
+					</div>
+					<div class="product_screen">
+						<span class="product_title">Диагональ экрана:</span>
+						<span class="screen">2</span>
+					</div>
+					<div class="product_ram">
+						<span class="product_title">Оперативная память:</span>
+						<span class="ram">2 ГБ</span>
+					</div>
+					<div class="product_color">
+						<span class="product_title">Цвет:</span>
+						<span class="ram">черный</span>
+					</div>
+					<div class="product_description">
+						<span class="product_title">Описание товара:</span>
+						<p class="description">Lorem ipsum dolor sit amet.</p>
+					</div>
+					<div class="product_price">
+						<span class="product_title">Цена:</span>
+						<span class="price">160$</span>
+					</div>
+				</div>
+			</li>
+			<li class="poduct">
+				<div class="product_view">
+					<img src="products/comp_black.jpg" alt="">
+				</div>
+				<div class="product_text">
+					<div class="product_name">
+						<span class="product_title">Наименование:</span>
+						<span class="name">Samsung grand 2</span>
+					</div>
+					<div class="product_companie">
+						<span class="product_title">Производитель:</span>
+						<span class="companie">Samsung</span>
+					</div>
+					<div class="product_screen">
+						<span class="product_title">Диагональ экрана:</span>
+						<span class="screen">2</span>
+					</div>
+					<div class="product_ram">
+						<span class="product_title">Оперативная память:</span>
+						<span class="ram">2 ГБ</span>
+					</div>
+					<div class="product_color">
+						<span class="product_title">Цвет:</span>
+						<span class="ram">черный</span>
+					</div>
+					<div class="product_description">
+						<span class="product_title">Описание товара:</span>
+						<p class="description">Lorem ipsum dolor sit amet.</p>
+					</div>
+					<div class="product_price">
+						<span class="product_title">Цена:</span>
+						<span class="price">160$</span>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</article>
+
+
+</section>
+
+</body>
+</html>
