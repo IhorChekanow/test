@@ -1,0 +1,55 @@
+#header{
+	    border-bottom: 4px solid @theme_color;
+	    .clearfix;
+        padding-bottom: 6px;
+
+		@logo_w: 22%;
+		@header_text: 100% - @logo_w;
+
+		#logo,
+		.main_title{
+			float: left;
+		}
+
+		#logo{
+		width: @logo_w;
+		padding-left: 2%;
+		}
+
+		#logo img{
+			width: auto;
+			height: 75px;
+			margin: 3px 0px;
+		}
+
+		p{
+			font-size: 12px;
+		}
+}
+
+#main_contauner{
+	.clearfix;
+}
+
+@sidebar_w: 20%;
+@main_content_w: 100% - @sidebar_w;
+
+#sidebar,
+#main_content{
+	float: left;
+}
+
+#sidebar{
+	width: @sidebar_w;
+
+	h3{
+	background: @theme_color;
+    color: @color_white;
+    padding: 5px 0px 11px;
+	}
+}
+
+#main_content{
+	width: @main_content_w;
+}
+
