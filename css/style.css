@@ -252,9 +252,6 @@ h3 {
   display: table;
   clear: both;
 }
-.accordion-content .price-container {
-  display: none;
-}
 .accordion-content .chek-container > div:last-child {
   margin-bottom: 5px;
 }
