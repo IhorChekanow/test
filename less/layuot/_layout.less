@@ -42,14 +42,28 @@
 #sidebar{
 	width: @sidebar_w;
 
-	h3{
+	&>h3{
 	background: @theme_color;
     color: @color_white;
-    padding: 5px 0px 11px;
+    padding: 5px 10px 11px;
 	}
 }
 
 #main_content{
 	width: @main_content_w;
+
+	&>h3{
+	padding: 12px;
+	}
+}
+
+#filters{
+
+	.accordion-header h3{
+		padding-top: 4px;
+		padding-bottom: 7px;
+		font-size: 18px;
+	}
+
 }
 

@@ -1,0 +1,84 @@
+.accordion-header {
+	cursor: pointer;
+	border: 1px solid @accordion_bg_color;
+}
+
+
+
+.accordion-content{
+	.clearfix;
+	border-bottom:  3px solid @theme_color;
+
+	.price-container{
+		display: none;
+	}
+
+	.chek-container>div:last-child{
+		margin-bottom: 5px;
+	}
+
+
+	[type="submit"]{
+		.theme_button;
+		float: right;
+	}
+}
+
+
+.chek-container{
+		padding: 10px 20px;
+
+		div{
+			    margin-bottom: 15px;
+		}
+
+		div h4{
+			margin-bottom: 10px;
+		}
+
+		div input{
+			display: none;
+		}
+
+		@custom_chek_w: 8px;
+
+		label{
+			display: block;
+			padding: 3px 12px;
+			font-size: 12px;
+			cursor: pointer;
+		}
+
+		input[type="checkbox"], 
+		input[type="radio"]{
+
+			&+label::before {
+			content: "";
+			display: inline-block;
+			height: @custom_chek_w;
+			width: @custom_chek_w;
+			margin: 0 5px 0 0;
+			background-color: green;
+			vertical-align: baseline;
+			}
+
+			&:checked+label::before {
+			   background-color: red;
+			}
+
+			&:disabled + label::before {
+			background-color: gray;
+			}
+
+			&:checked:disabled + label::before {
+			background-color: black;
+			}
+
+		}
+
+
+
+
+
+
+	}

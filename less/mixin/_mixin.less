@@ -41,7 +41,7 @@ box-sizing: @box-model;
 }
 
 
-.my_transition(@transition){
+.transition(@transition:0.3s){
 -ms-transition:  @transition;
 -webkit-transition:  @transition;
 -moz-transition:  @transition;
@@ -54,4 +54,30 @@ box-sizing: @box-model;
 
 @base_color: #f5f5f5;
 @theme_color: #2e3192;
+@accordion_bg_color: #b9beea;
 @color_white: #FFF;
+@color_black: #000;
+
+
+.theme_button(){
+    background-color: @theme_color;
+    color: @color_white;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    .borderRadius(0px);
+    .transition();
+    padding: 3px 6px;
+    cursor: pointer;
+    font-size: 14px;
+
+    &:hover{
+    color: @color_black;  
+    }
+}
+
+.sidebar_h3(){
+    background: @theme_color;
+    color: @color_white;
+    padding: 5px 10px 11px;
+}
