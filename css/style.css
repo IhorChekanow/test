@@ -267,6 +267,9 @@ h3 {
   -moz-transition: 0.3s;
   transition: 0.3s;
 }
+.accordion-header a {
+  display: block;
+}
 .accordion-header > h3 {
   font-size: 18px;
 }

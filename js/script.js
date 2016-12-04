@@ -6,7 +6,7 @@ jQuery(document).ready(function($) {
 	$(function($) {
   var allAccordions = $('.accordion .accordion-content');
   var allAccordionItems = $('.accordion .accordion-header');
-  $('.accordion > .accordion-header').click(function() {
+  $('.accordion > .accordion-header').click(function(e) {
 
     /* If the header block has a class Open, then hide the panel */
     
