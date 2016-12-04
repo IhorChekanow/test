@@ -41,6 +41,7 @@
 
 #sidebar{
 	width: @sidebar_w;
+	border-right: 1px solid @accordion_bg_color;
 
 	&>h3{
 	background: @theme_color;
@@ -57,13 +58,25 @@
 	}
 }
 
-#filters{
+.feed_back_form{
+	    padding: 16px 16px 0px;
 
-	.accordion-header h3{
-		padding-top: 4px;
-		padding-bottom: 7px;
-		font-size: 18px;
-	}
+	    h3{
+	    	color: @theme_color;
+	    	font-size: 20px;
+	    	margin-bottom: 10px;
+	    }
+
+	    @label_w: 30%;
+	    @input_w: 100% - @label_w;
+
+	    .input_container input{
+	    	width: @input_w;
+	    }
+
+	    .input_container label{
+	    	width:  @label_w;
+	    }
 
 }
 

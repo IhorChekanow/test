@@ -1,6 +1,12 @@
 .accordion-header {
 	cursor: pointer;
 	border: 1px solid @accordion_bg_color;
+	padding: 5px 10px 5px;
+	.transition;
+
+	&>h3{
+		font-size: 18px;
+	}
 }
 
 .accordion-content{
@@ -11,7 +17,7 @@
 		margin-bottom: 5px;
 	}
 
-	[type="submit"]{
+	.show{
 		.theme_button;
 		float: right;
 	}
@@ -69,4 +75,23 @@
 
 		}
 
+	}
+
+
+	.price-container{
+		padding: 0px 20px;
+
+		h3{
+			    font-size: 16px;
+			    margin-bottom: 10px;
+		}
+	}
+
+	.input-container {
+	margin-bottom: 10px;
+
+		label{
+			display: block;
+			padding-bottom: 4px;
+		}
 	}

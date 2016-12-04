@@ -7,10 +7,21 @@
 		display: none;
 	}
 
-	&-header.open h3
-	{
-	background:#14ad40;
+	&-header:hover{
+		background-color: @accordion_bg_color;
 	}
+
+	&-header.open
+	{
+	color: @color_white;
+	border-color: @theme_color;
+	}
+
+	&-header.open,
+	&-header.open:hover{
+	background: @theme_color;
+	}
+
 
 	&-header.open+&-content{
 		display: block;
