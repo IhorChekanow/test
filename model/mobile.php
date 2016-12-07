@@ -1,143 +1,146 @@
-<h3 class="products_type">РўРµР»РµС„РѕРЅС‹</h3>
-<ul class="products_list">
-	<li class="poduct">
-		<div class="product_view">
-			<img src="products/mobile/mobile_black.jpg" alt="">
-		</div>
-		<div class="product_text">
-			<div class="product_name">
-				<span class="product_title">РќР°РёРјРµРЅРѕРІР°РЅРёРµ:</span>
-				<span class="name">Samsung grand 2</span>
-			</div>
-			<div class="product_companie">
-				<span class="product_title">РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ:</span>
-				<span class="companie">Samsung</span>
-			</div>
-			<div class="product_screen">
-				<span class="product_title">Р”РёР°РіРѕРЅР°Р»СЊ СЌРєСЂР°РЅР°:</span>
-				<span class="screen">2</span>
-			</div>
-			<div class="product_ram">
-				<span class="product_title">РћРїРµСЂР°С‚РёРІРЅР°СЏ РїР°РјСЏС‚СЊ:</span>
-				<span class="ram">2 Р“Р‘</span>
-			</div>
-			<div class="product_color">
-				<span class="product_title">Р¦РІРµС‚:</span>
-				<span class="ram">С‡РµСЂРЅС‹Р№</span>
-			</div>
-			<div class="product_description">
-				<span class="product_title">РћРїРёСЃР°РЅРёРµ С‚РѕРІР°СЂР°:</span>
-				<p class="description">Lorem ipsum dolor sit amet.</p>
-			</div>
-			<div class="product_price">
-				<span class="product_title">Р¦РµРЅР°:</span>
-				<span class="price">160$</span>
-			</div>
-		</div>
-	</li>
-	<li class="poduct">
-		<div class="product_view">
-			<img src="products/mobile/mobile_red.jpg" alt="">
-		</div>
-		<div class="product_text">
-			<div class="product_name">
-				<span class="product_title">РќР°РёРјРµРЅРѕРІР°РЅРёРµ:</span>
-				<span class="name">Samsung grand 2</span>
-			</div>
-			<div class="product_companie">
-				<span class="product_title">РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ:</span>
-				<span class="companie">Samsung</span>
-			</div>
-			<div class="product_screen">
-				<span class="product_title">Р”РёР°РіРѕРЅР°Р»СЊ СЌРєСЂР°РЅР°:</span>
-				<span class="screen">2</span>
-			</div>
-			<div class="product_ram">
-				<span class="product_title">РћРїРµСЂР°С‚РёРІРЅР°СЏ РїР°РјСЏС‚СЊ:</span>
-				<span class="ram">2 Р“Р‘</span>
-			</div>
-			<div class="product_color">
-				<span class="product_title">Р¦РІРµС‚:</span>
-				<span class="ram">С‡РµСЂРЅС‹Р№</span>
-			</div>
-			<div class="product_description">
-				<span class="product_title">РћРїРёСЃР°РЅРёРµ С‚РѕРІР°СЂР°:</span>
-				<p class="description">Lorem ipsum dolor sit amet.</p>
-			</div>
-			<div class="product_price">
-				<span class="product_title">Р¦РµРЅР°:</span>
-				<span class="price">160$</span>
-			</div>
-		</div>
-	</li>
-	<li class="poduct">
-		<div class="product_view">
-			<img src="products/mobile/mobile_silver.jpg" alt="">
-		</div>
-		<div class="product_text">
-			<div class="product_name">
-				<span class="product_title">РќР°РёРјРµРЅРѕРІР°РЅРёРµ:</span>
-				<span class="name">Samsung grand 2</span>
-			</div>
-			<div class="product_companie">
-				<span class="product_title">РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ:</span>
-				<span class="companie">Samsung</span>
-			</div>
-			<div class="product_screen">
-				<span class="product_title">Р”РёР°РіРѕРЅР°Р»СЊ СЌРєСЂР°РЅР°:</span>
-				<span class="screen">2</span>
-			</div>
-			<div class="product_ram">
-				<span class="product_title">РћРїРµСЂР°С‚РёРІРЅР°СЏ РїР°РјСЏС‚СЊ:</span>
-				<span class="ram">2 Р“Р‘</span>
-			</div>
-			<div class="product_color">
-				<span class="product_title">Р¦РІРµС‚:</span>
-				<span class="ram">С‡РµСЂРЅС‹Р№</span>
-			</div>
-			<div class="product_description">
-				<span class="product_title">РћРїРёСЃР°РЅРёРµ С‚РѕРІР°СЂР°:</span>
-				<p class="description">Lorem ipsum dolor sit amet.</p>
-			</div>
-			<div class="product_price">
-				<span class="product_title">Р¦РµРЅР°:</span>
-				<span class="price">160$</span>
-			</div>
-		</div>
-	</li>
-	<li class="poduct">
-		<div class="product_view">
-			<img src="products/mobile/mobile_white.jpg" alt="">
-		</div>
-		<div class="product_text">
-			<div class="product_name">
-				<span class="product_title">РќР°РёРјРµРЅРѕРІР°РЅРёРµ:</span>
-				<span class="name">Samsung grand 2</span>
-			</div>
-			<div class="product_companie">
-				<span class="product_title">РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ:</span>
-				<span class="companie">Samsung</span>
-			</div>
-			<div class="product_screen">
-				<span class="product_title">Р”РёР°РіРѕРЅР°Р»СЊ СЌРєСЂР°РЅР°:</span>
-				<span class="screen">2</span>
-			</div>
-			<div class="product_ram">
-				<span class="product_title">РћРїРµСЂР°С‚РёРІРЅР°СЏ РїР°РјСЏС‚СЊ:</span>
-				<span class="ram">2 Р“Р‘</span>
-			</div>
-			<div class="product_color">
-				<span class="product_title">Р¦РІРµС‚:</span>
-				<span class="ram">С‡РµСЂРЅС‹Р№</span>
-			</div>
-			<div class="product_description">
-				<span class="product_title">РћРїРёСЃР°РЅРёРµ С‚РѕРІР°СЂР°:</span>
-				<p class="description">Lorem ipsum dolor sit amet.</p>
-			</div>
-			<div class="product_price">
-				<span class="product_title">Р¦РµРЅР°:</span>
-				<span class="price">160$</span>
-			</div>
-		</div>
-	</li>
-</ul>
+<?php
+/*
+Данные с сервера:
+
+поле с основным контентом - id=main_div
+
+наименование - class=name
+производитель - class=company
+диагональ экрана - class=screen
+оперативная память - class=RAM
+цвет - class=color
+описание товара - class=description
+цена - class=price
+картинка - img
+
+Цели:
+1) Создать базу данных
+2) Создать запрос на получение данных из БД
+3) Создать вывод данных из базы данных.
+4) Формирование html страницы из полученных с бд данных
+
+SELECT * FROM `products` WHERE `company`='apple' - для запросов some
+*/
+
+ /*
+$query="SELECT * FROM `products` WHERE `Companie`='".$_POST['companie']."'";
+
+$_POST['Companie']
+$_POST['max_price']
+
+$query="SELECT * FROM `products` WHERE 1";
+
+if (isset($_POST['Companie']))
+// ($_POST['Companie']!=null)
+ $query .= " AND `Companie`='".$_POST['Companie']."'";
+if (isset($_POST['max_price']))
+ $query .= " AND `Price` < ".$_POST['max_price'];
+
+//Если есть только фильтр по Companie="Apple"
+$query="SELECT * FROM `products` WHERE 1 AND `Companie`='Apple'"
+
+//Если есть только фильтр по Companie="Apple" и по цене <1000
+echo '<img src="products/ima.jpg">';
+
+echo "<p>".$text."</p>";
+echo '<p>$text</p>';
+
+$_POST['Companie'] //может хранить массив
+$_POST['max_price'] //может хранить только одно значение
+
+$query="SELECT * FROM `products` WHERE 1";
+
+if (isset($_POST['Companie']))
+// ($_POST['Companie']!=null)
+ $query .= " AND `Companie` IN (".implode(",", $_POST['Companie']).")";
+if (isset($_POST['max_price']))
+ $query .= " AND `Price` < ".$_POST['max_price'];
+
+implode(",",array); // Формирует строку из массива
+
+//Если есть только фильтр по Companie="Apple"
+$query="SELECT * FROM `products` WHERE 1 AND `Companie` in ('Apple','Asus')";
+
+//Если есть только фильтр по Companie="Apple" и по цене <1000
+$query="SELECT * FROM `products` WHERE 1 AND `Companie` in ('Apple','Asus') AND `Price` < 1000";
+*/
+// Посылка запроса в БД и получение данных
+//Формирование списка клиентов
+
+//1) Формирование запроса из полученных данных от клиента
+
+//Если how_many=all - выводить все товары из БД
+// если how_many=some - использовать данные фильтра
+
+
+
+
+
+
+											// ЗАПРОС
+		//Подключение файла конфигурации
+
+		require_once( "config.php" ); 
+		
+		
+
+		//перменные для подключения к базе данных - 1
+		$link=mysqli_connect("localhost", "root", "", "formbase");
+		//Запрос
+		//$query = "SELECT `ID`,`name`,`company`,`screen`,`RAM`, `color`, `description`, `price`, `image` FROM `products`"; //запрос -2
+		
+	//Начало фильтров
+$query="SELECT * FROM `products` WHERE 1";
+                  //фильтр company
+if (isset($_POST['company']))
+// ($_POST['Companie']!=null)
+ $query .= " AND `company` IN (".implode(",", $_POST['company']).")";
+                  //фильтр screen
+                  //фильтр RAM
+                  //фильтр color
+if (isset($_POST['color']))
+ $query .= " AND `color`='".$_POST['color']."'";				  
+                  //фильтр max price
+if (isset($_POST['max_price']))
+ $query .= " AND `price` < ".$_POST['max_price'];
+                  //фильтр min price
+ if (isset($_POST['min_price']))
+ $query .= " AND `price` > ".$_POST['min_price'];	
+		
+		//Послыка запроса к БД, ответ передаем переменной $array - 3
+		$array=mysqli_query($link, $query);
+		//разбираем ответ БД на асоциативный массив и передаем его переменной $array2
+		while($array2=mysqli_fetch_array($array))
+		//и пока в переменной $array есть данные для формирования массива 
+		//dsgjkyztv cktle.obq rjl
+		{
+
+			echo '<tr>
+
+			<td style="width: 212px;"><b>'.$array2['ID'].') '.$array2['name'].'</b></td>
+
+			<td style="width: 112px;">'.$array2[2].'</td>
+
+			<td style="width: 130px;">'.$array2[3].'</td>
+			
+			<td style="width: 130px;">'.$array2[4].'</td>
+			
+			<td style="width: 130px;">'.$array2[5].'</td>
+			
+			<td style="width: 130px;">'.$array2[6].'</td>
+			
+			<td style="width: 130px;">'.$array2[7].'</td>
+			
+			<td style="width: 130px;"><img src="'.$array2['image'].'"></td>
+			
+			
+
+			</tr>';
+			
+			//формирование строки таблицы <tr><td></td><td></td><td></td></tr>
+		}
+// Формирование HTML страницы из полученных с БД данных
+
+
+?>
+
