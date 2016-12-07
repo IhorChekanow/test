@@ -57,7 +57,6 @@ jQuery(document).ready(function($) {
 
 $(document).ready(function(){
 
-
   // переменная принимающая значение: all/some
   /* данная переменная по умолчанию равна 'all'
     если поля из филтров будут заполнены, то функции проверки полей подставят в значение этой переменной 'some'.
@@ -71,7 +70,7 @@ $(document).ready(function(){
   */
   $('.show').click(function(e){
     e.preventDefault();
-
+	
     /* Depending on the ID selects the model  (mobile, tablet, laptop) */
   
     var type_product = $(this).parents('form').prev().attr('id');

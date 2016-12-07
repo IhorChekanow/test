@@ -3,7 +3,7 @@ ini_set( "display_errors", true ); // выводит ошибки в брауз�
 date_default_timezone_set( "Europe/Kiev" ); //временная зона // http://www.php.net/manual/en/timezones.php
 //переменные окружения
 define( "DB_HOST", "localhost");  //адрес хоста
-define( "DB_NAME", "Clients"); //Имя БД
+define( "DB_NAME", "products"); //Имя БД
 define( "DB_USER", "root"); //Имя юзера
 define( "DB_PASS", ""); //Пароль
 
