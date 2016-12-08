@@ -70,26 +70,13 @@ $(document).ready(function(){
   */
   $('.show').click(function(e){
     e.preventDefault();
-	
     /* Depending on the ID selects the model  (mobile, tablet, laptop) */
-  
     var type_product = $(this).parents('form').prev().attr('id');
-   
-   /* mobile */
-   
-    if (type_product == "mobile") {
-
         $.ajax({
             type: 'POST', // метод которім пересілаются даные
             url: 'model/'+type_product+'.php?', //адресс файла на сервере, который принимает данные Замени значение на mobile.php для мобильніх телефонов
             //> код отвечающий за склейку строки с информацией запроса
-            data: set_array($('#item-1 .companie'),"&companie%5B%5D=") + //
-            set_array($('#item-1 .screen'),"&screen%5B%5D=") +
-            set_array($('#item-1 .ram'),"&ram%5B%5D=") +
-            set_color($('#item-1 .color')) +
-            set_text($('#item-1 .price-container .price_max'),"&price_max=") + 
-            set_text($('#item-1 .price-container .price_min'),"&price_min=") +
-            '&how_many=' + how_many,
+            data: set_data(type_product),
             //<
             success: function(data){
                 // $('#main_content').html('<p>Сюда должна вернуться data с mobile.php</p>');
@@ -97,60 +84,50 @@ $(document).ready(function(){
                 how_many = "all"; //Возвращаем значение переменной how_many на изначальное "all"
             }
         });
-    } 
-
-   /* tablet */
-
-    else if (type_product == "tablet") {
-
-        $.ajax({
-            type: 'POST', // метод которім пересілаются даные
-            url: 'model/'+type_product+'.php?', //адресс файла на сервере, который принимает данные Замени значение на mobile.php для мобильніх телефонов
-            //> код отвечающий за склейку строки с информацией запроса
-            data: set_array($('#item-2 .companie'),"&companie%5B%5D=") + //
-            set_array($('#item-2 .screen'),"&screen%5B%5D=") +
-            set_array($('#item-2 .memory'),"&memory%5B%5D=") +
-            set_color($('#item-2 .color')) +
-            set_text($('#item-2 .price-container .price_max'),"&price_max=") + 
-            set_text($('#item-2 .price-container .price_min'),"&price_min=") +
-            '&how_many=' + how_many,
-            //<
-            success: function(data){
-                // $('#main_content').html('<p>Сюда должна вернуться data с mobile.php</p>');
-                $('#main_content').html(data);
-                how_many = "all"; //Возвращаем значение переменной how_many на изначальное "all"
-            }
-        });
-    }
-
-
-   /* notebook */
-
-    else {
-
-        $.ajax({
-            type: 'POST', // метод которім пересілаются даные
-            url: 'model/'+type_product+'.php?', //адресс файла на сервере, который принимает данные Замени значение на mobile.php для мобильніх телефонов
-            //> код отвечающий за склейку строки с информацией запроса
-            data: set_array($('#item-3 .companie'),"&companie%5B%5D=") + //
-            set_array($('#item-3 .proc'),"&proc%5B%5D=") +
-            set_array($('#item-3 .core'),"&core%5B%5D=") +
-            set_array($('#item-3 .memory'),"&memory%5B%5D=") +
-            set_color($('#item-3 .color')) +
-            set_text($('#item-3 .price-container .price_max'),"&price_max=") + 
-            set_text($('#item-3 .price-container .price_min'),"&price_min=") +
-            '&how_many=' + how_many,
-            //<
-            success: function(data){
-                // $('#main_content').html('<p>Сюда должна вернуться data с mobile.php</p>');
-                $('#main_content').html(data);
-                how_many = "all"; //Возвращаем значение переменной how_many на изначальное "all"
-            }
-        });
-    }
-
-
   });
+  
+  /**
+  * Функция возвращающая строку data
+  *
+  * 
+  */
+  function set_data(type_product)
+  {
+	var data = '';
+	switch (type_product)
+	{
+		case "mobile":
+			data = set_array($('#item-1 .companie'),"&companie%5B%5D=") +
+				set_array($('#item-1 .screen'),"&screen%5B%5D=") +
+				set_array($('#item-1 .ram'),"&ram%5B%5D=") +
+				set_color($('#item-1 .color')) +
+				set_text($('#item-1 .price-container .price_max'),"&price_max=") + 
+				set_text($('#item-1 .price-container .price_min'),"&price_min=") +
+				'&how_many=' + how_many;
+		break;
+		case "tablet":
+			data = set_array($('#item-2 .companie'),"&companie%5B%5D=") + //
+				set_array($('#item-2 .screen'),"&screen%5B%5D=") +
+				set_array($('#item-2 .memory'),"&memory%5B%5D=") +
+				set_color($('#item-2 .color')) +
+				set_text($('#item-2 .price-container .price_max'),"&price_max=") + 
+				set_text($('#item-2 .price-container .price_min'),"&price_min=") +
+				'&how_many=' + how_many;
+		break;
+		case "notebook":
+			data = set_array($('#item-3 .companie'),"&companie%5B%5D=") + //
+				set_array($('#item-3 .proc'),"&proc%5B%5D=") +
+				set_array($('#item-3 .core'),"&core%5B%5D=") +
+				set_array($('#item-3 .memory'),"&memory%5B%5D=") +
+				set_color($('#item-3 .color')) +
+				set_text($('#item-3 .price-container .price_max'),"&price_max=") + 
+				set_text($('#item-3 .price-container .price_min'),"&price_min=") +
+				'&how_many=' + how_many;
+		break;
+	}
+	  
+	return data;
+  }
   
   /**
   * Функция возвращающая массив данных
