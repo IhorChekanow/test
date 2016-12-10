@@ -98,8 +98,8 @@ $(document).ready(function(){
 	{
 		case "mobile":
 			data = set_array($('#item-1 .companie'),"&companie%5B%5D=") +
-				set_array($('#item-1 .screen'),"&screen%5B%5D=") +
-				set_array($('#item-1 .ram'),"&ram%5B%5D=") +
+				set_arrange($('#item-1 .screen'),"&screen") +
+				set_arrange($('#item-1 .ram'),"&ram") +
 				set_color($('#item-1 .color')) +
 				set_text($('#item-1 .price-container .price_max'),"&price_max=") + 
 				set_text($('#item-1 .price-container .price_min'),"&price_min=") +
@@ -107,7 +107,7 @@ $(document).ready(function(){
 		break;
 		case "tablet":
 			data = set_array($('#item-2 .companie'),"&companie%5B%5D=") + //
-				set_array($('#item-2 .screen'),"&screen%5B%5D=") +
+				set_arrange($('#item-2 .screen'),"&screen") +
 				set_array($('#item-2 .memory'),"&memory%5B%5D=") +
 				set_color($('#item-2 .color')) +
 				set_text($('#item-2 .price-container .price_max'),"&price_max=") + 
@@ -118,7 +118,7 @@ $(document).ready(function(){
 			data = set_array($('#item-3 .companie'),"&companie%5B%5D=") + //
 				set_array($('#item-3 .proc'),"&proc%5B%5D=") +
 				set_array($('#item-3 .core'),"&core%5B%5D=") +
-				set_array($('#item-3 .memory'),"&memory%5B%5D=") +
+				set_arrange($('#item-3 .memory'),"&memory") +
 				set_color($('#item-3 .color')) +
 				set_text($('#item-3 .price-container .price_max'),"&price_max=") + 
 				set_text($('#item-3 .price-container .price_min'),"&price_min=") +
@@ -127,6 +127,56 @@ $(document).ready(function(){
 	}
 	  
 	return data;
+  }
+  
+  /**
+  * Функция возвращающая мнимальное и максивмальное значение
+  * 
+  * Данная функция используется для полей с чекбоксами (так как их можно отметить несколько)
+  она проверяет все чекбоксы обьекта, віделяет из их значения числа. После она возвращает 
+  максимальное и минимальное число при их наличие
+  *
+  * @param {Object} obj - Обьект JQyery, в данном случае div, содержащий поля ввода
+  * @param {string} some_text - Строка содержащая текст названия переменной в запросе 
+  *
+  * return {string} text - Строка в которой склеяны все значения отмеченных чекбоксов
+  */
+  function set_arrange(obj,some_text)
+  {
+	  var text_min; //минимальное значение
+	  var text_max; //максимальное значение
+	  var text = "";
+	  obj.find('input').each(function(){ //проверка всех поллей ввода в обьекте
+		  if ($(this).prop("checked")) // если есть отмеченной поле ввода
+		  {
+				var str = $(this).val(); //строка значения єлемента
+				var arr = str.split('-'); //разделяем строку на массив
+				//работаем с первым элементом массива
+				if (arr[0]!="_") //если значение не пусто
+				{
+					if (text_min==null || (text_min!=null && text_min>arr[0]))
+						text_min = Number(arr[0]);
+				}
+				else //если значение пусто
+				{text_min = 0;} //присваиваем минимальному значению ноль
+				//Работаем со вторым эд=лементом массива
+				if (arr[1]!="_")
+				{
+					if (text_max==null || (text_max!=null && text_max<arr[1]))
+						text_max = Number(arr[1]);
+				}
+				else //если значение пусто
+				{text_max = 999;} //присваиваем максимальному значению 999
+				
+				how_many = "some"; //изменяем значение how_many
+		  }
+	  });
+	  //склеиваем строку
+	  if (text_min!=null)
+		text += some_text + '_min=' + text_min;
+	  if (text_max!=null)
+		text += some_text + '_max=' + text_max;
+	  return text;
   }
   
   /**
