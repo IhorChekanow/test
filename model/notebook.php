@@ -18,13 +18,13 @@ if ($_POST['how_many']!='all')
 		$query .= " AND `proc` IN ('".implode("','", $_POST['proc'])."')";
 					  //фильтр core
 	if (isset($_POST['core']))
-		$query .= " AND `core` IN ('".implode("','", $_POST['core'])."')";	
+		$query .= " AND `core` IN (".implode(",", $_POST['core']).")";	
 					  //фильтр RAM
 	if (isset($_POST['memory_max']))
-	 $query .= " AND `memory` < ".$_POST['memory_max'];
+	 $query .= " AND `memory` <= ".$_POST['memory_max'];
 					  //фильтр min price
 	 if (isset($_POST['memory_min']))
-	 $query .= " AND `memory` > ".$_POST['memory_min'];
+	 $query .= " AND `memory` >= ".$_POST['memory_min'];
 	/*if (isset($_POST['ram']))
 		$query .= " AND `RAM` IN ('".implode("','", $_POST['ram'])."')";	*/				  
 					  //фильтр color
@@ -32,10 +32,10 @@ if ($_POST['how_many']!='all')
 	 $query .= " AND `color`='".$_POST['color']."'";				  
 					  //фильтр max price
 	if (isset($_POST['price_max']))
-	 $query .= " AND `price` < ".$_POST['price_max'];
+	 $query .= " AND `price` <= ".$_POST['price_max'];
 					  //фильтр min price
 	 if (isset($_POST['price_min']))
-	 $query .= " AND `price` > ".$_POST['price_min'];	
+	 $query .= " AND `price` >= ".$_POST['price_min'];	
 
 }
 echo $query;

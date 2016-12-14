@@ -15,18 +15,18 @@ if ($_POST['how_many']!='all')
 		$query .= " AND `company` IN ('".implode("','", $_POST['companie'])."')"; ///!!!!!! Обрати внимание на ковічки
 					  //фильтр screen
 	if (isset($_POST['screen_max']))
-	 $query .= " AND `screen` < ".$_POST['screen_max'];
+	 $query .= " AND `screen` <= ".$_POST['screen_max'];
 					  //фильтр min price
 	 if (isset($_POST['screen_min']))
-	 $query .= " AND `screen` > ".$_POST['screen_min'];				  
+	 $query .= " AND `screen` >= ".$_POST['screen_min'];				  
 	/*if (isset($_POST['screen']))
 		$query .= " AND `screen` IN ('".implode("','", $_POST['screen'])."')";	*/			  
 					  //фильтр RAM
 	if (isset($_POST['ram_max']))
-	 $query .= " AND `RAM` < ".$_POST['ram_max'];
+	 $query .= " AND `RAM` <= ".$_POST['ram_max'];
 					  //фильтр min price
 	 if (isset($_POST['ram_min']))
-	 $query .= " AND `RAM` > ".$_POST['ram_min'];
+	 $query .= " AND `RAM` >= ".$_POST['ram_min'];
 	/*if (isset($_POST['ram']))
 		$query .= " AND `RAM` IN ('".implode("','", $_POST['ram'])."')";	*/			  
 					  //фильтр color
@@ -34,10 +34,10 @@ if ($_POST['how_many']!='all')
 	 $query .= " AND `color`='".$_POST['color']."'";				  
 					  //фильтр max price
 	if (isset($_POST['price_max']))
-	 $query .= " AND `price` < ".$_POST['price_max'];
+	 $query .= " AND `price` <= ".$_POST['price_max'];
 					  //фильтр min price
 	 if (isset($_POST['price_min']))
-	 $query .= " AND `price` > ".$_POST['price_min'];	
+	 $query .= " AND `price` >= ".$_POST['price_min'];	
 
 }
 echo $query;
