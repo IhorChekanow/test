@@ -6,8 +6,7 @@
 		</div>
 		<div class="product_text">
 			<div class="product_name">
-				<span class="product_title">Наименование:</span>
-				<span class="name">Samsung grand 2</span>
+				<h4 class="name">Samsung grand 2</h4>
 			</div>
 			<div class="product_companie">
 				<span class="product_title">Производитель:</span>
@@ -41,8 +40,7 @@
 		</div>
 		<div class="product_text">
 			<div class="product_name">
-				<span class="product_title">Наименование:</span>
-				<span class="name">Samsung grand 2</span>
+				<h4 class="name">Samsung grand 2</h4>
 			</div>
 			<div class="product_companie">
 				<span class="product_title">Производитель:</span>
@@ -76,8 +74,8 @@
 		</div>
 		<div class="product_text">
 			<div class="product_name">
-				<span class="product_title">Наименование:</span>
-				<span class="name">Samsung grand 2</span>
+				
+				<h4 class="name">Samsung grand 2</h4>
 			</div>
 			<div class="product_companie">
 				<span class="product_title">Производитель:</span>
@@ -111,8 +109,7 @@
 		</div>
 		<div class="product_text">
 			<div class="product_name">
-				<span class="product_title">Наименование:</span>
-				<span class="name">Samsung grand 2</span>
+				<h4 class="name">Samsung grand 2</h4>
 			</div>
 			<div class="product_companie">
 				<span class="product_title">Производитель:</span>

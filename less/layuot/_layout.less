@@ -23,7 +23,8 @@
 		}
 
 		p{
-			font-size: 12px;
+			.font(normal; 11.5px; @header_font_fam);
+			color: @theme_color;
 		}
 }
 
@@ -43,9 +44,10 @@
 	width: @sidebar_w;
 	border-right: 1px solid @accordion_bg_color;
 
-	&>h3{
+	&>h2{
 	background: @theme_color;
     color: @color_white;
+    font-size: 20px;
     padding: 5px 10px 11px;
 	}
 }
@@ -63,20 +65,59 @@
 
 	    h3{
 	    	color: @theme_color;
-	    	font-size: 20px;
+	    	font-size: 16px;
 	    	margin-bottom: 10px;
 	    }
 
 	    @label_w: 30%;
 	    @input_w: 100% - @label_w;
 
-	    .input_container input{
-	    	width: @input_w;
+	    .input_container{
+	    	.clearfix;
+	    	margin-bottom: 5px;
+
+			&.input_text>input,
+			&.input_text>label{
+			display: block;
+			float: left;
+			}
+
+			&.input_text input{
+			width: @input_w;
+			}
+
+			&.input_text label{
+			width:  @label_w;
+			font-size: 12px;
+			}
 	    }
 
-	    .input_container label{
-	    	width:  @label_w;
+	    .client_message{
+	    	width: 100%;
 	    }
 
+	    .target_container{
+	    	.clearfix;
+	    	padding: 0px;
+
+	    	h4{
+			width:  @label_w;
+			padding: 3px 0px;
+			}
+
+			h4+div{
+			width: @input_w;
+			}
+
+			&>*{
+				display: block;
+				float: left;
+			}
+
+			.input_container label{
+			padding-left: 0px;
+			}
+
+	    }
 }
 

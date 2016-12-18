@@ -10,12 +10,11 @@
 </head>
 <body>
 
-<div>Hello</div>
 
 <header id="header">
 	<div id="logo"><img src="image/logo.png" alt=""></div>
 	<div class="main_title">
-		<h1><strong>Интернет</strong> витрина fghfgh</h1>
+		<h1><strong>Интернет</strong> витрина</h1>
 		<p>Электроника по самым низким ценам</p>
 	</div>
 </header>
@@ -25,7 +24,7 @@
 	=            Filters            =
 	==============================-->
 	<aside id="sidebar">
-		<h3>Наши товары</h3>
+		<h2>Наши товары</h2>
 		<div class="accordion" id="filters">
 		<!--===================================
 		=            Mobile filter            =
@@ -229,23 +228,28 @@
 
 		<form action="mail.php" method="post" class="feed_back_form">
 			<h3>Свяжитесь с нами</h3>
-			<div class="input_container">
+			<div class="input_container input_text">
 				<label for="">Имя</label>
 				<input type="text" name="client_name"  class="client_name">
 			</div>
-			<div class="input_container">
+			<div class="input_container input_text">
 				<label for="">Email</label>
-				<input type="text" name="client_email"  class="client_email">
+				<input type="email" name="client_email"  class="client_email">
 			</div>
-			<h4>Цель</h4>
-			<div class="input_container">
-				<input type="radio" name="buy"  value="buy">
-				<label for="buy">Покупка</label>
+
+			<div class="target_container chek-container">
+
+				<h4>Цель</h4>
+				<div class="input_container">
+					<input type="radio" name="target"  value="buy">
+					<label for="buy">Покупка</label>
+
+					<input type="radio" name="target"  value="cooperation">
+					<label for="cooperation">Сотрудничество</label>
+				</div>
+				
 			</div>
-			<div class="input_container">
-				<input type="radio" name="buy"  value="buy">
-				<label for="buy">Покупка</label>
-			</div>
+			
 			<h4>Сообщение</h4>
 			<textarea name="client_message"  cols="30" rows="10" class="client_message"></textarea>
 			<button type="submit" class="feed_back_btn btn">Отправить</button>

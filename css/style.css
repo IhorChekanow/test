@@ -6,6 +6,23 @@
   display: table;
   clear: both;
 }
+/* fonts */
+@font-face {
+  font-family: ArialMT;
+  src: url('../fonts/ArialMT/ArialMT.eot');
+  src: url('../fonts/ArialMT/ArialMT.otf');
+  src: url('../fonts/ArialMT/ArialMT.eot?#iefix') format('embedded-opentype'), url('../fonts/ArialMT/ArialMT.woff') format('woff'), url('../fonts/ArialMT/ArialMT.ttf') format('truetype'), url('../fonts/ArialMT/ArialMT.svg#ArialMT') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: MyriadPro;
+  src: url('../fonts/MyriadPro/MyriadPro.eot');
+  src: url('../fonts/MyriadPro/MyriadPro.otf');
+  src: url('../fonts/MyriadPro/MyriadPro.eot?#iefix') format('embedded-opentype'), url('../fonts/MyriadPro/MyriadPro.woff') format('woff'), url('../fonts/MyriadPro/MyriadPro.ttf') format('truetype'), url('../fonts/MyriadPro/MyriadPro.svg#MyriadPro') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 /* resel */
 * {
   padding: 0;
@@ -19,7 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-  font: 14px/18px Verdana, sans-serif;
+  font: 14px/18px ArialMT, sans-serif;
 }
 code,
 kbd,
@@ -172,9 +189,10 @@ q > q:before {
 /* general */
 body {
   background-color: #f5f5f5;
+  font-family: ArialMT;
 }
 h1 {
-  font-size: 30px;
+  font: normal 34px MyriadPro;
   line-height: 30px;
   margin: 19px 0px 7px ;
 }
@@ -182,13 +200,24 @@ h3 {
   font-size: 24px;
   line-height: 24px;
 }
-[type="text"] {
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  -o-border-radius: 0px;
-  border-radius: 0px;
-  border: 1px #CCC solid;
-  font-size: 14px;
+[type="text"],
+[type="email"] {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+textarea {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+[type="text"],
+[type="email"],
+textarea {
+  border: 1px solid #888;
+  font-size: 12px;
   padding: 2px;
 }
 /* layuot */
@@ -216,7 +245,8 @@ h3 {
   margin: 3px 0px;
 }
 #header p {
-  font-size: 12px;
+  font: normal 11.5px MyriadPro;
+  color: #2e3192;
 }
 #main_contauner:before,
 #main_contauner:after {
@@ -232,9 +262,10 @@ h3 {
   width: 20%;
   border-right: 1px solid #b9beea;
 }
-#sidebar > h3 {
+#sidebar > h2 {
   background: #2e3192;
   color: #FFF;
+  font-size: 20px;
   padding: 5px 10px 11px;
 }
 #main_content {
@@ -248,14 +279,55 @@ h3 {
 }
 .feed_back_form h3 {
   color: #2e3192;
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
-.feed_back_form .input_container input {
+.feed_back_form .input_container {
+  margin-bottom: 5px;
+}
+.feed_back_form .input_container:before,
+.feed_back_form .input_container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.feed_back_form .input_container.input_text > input,
+.feed_back_form .input_container.input_text > label {
+  display: block;
+  float: left;
+}
+.feed_back_form .input_container.input_text input {
   width: 70%;
 }
-.feed_back_form .input_container label {
+.feed_back_form .input_container.input_text label {
   width: 30%;
+  font-size: 12px;
+}
+.feed_back_form .client_message {
+  width: 100%;
+}
+.feed_back_form .target_container {
+  padding: 0px;
+}
+.feed_back_form .target_container:before,
+.feed_back_form .target_container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.feed_back_form .target_container h4 {
+  width: 30%;
+  padding: 3px 0px;
+}
+.feed_back_form .target_container h4 + div {
+  width: 70%;
+}
+.feed_back_form .target_container > * {
+  display: block;
+  float: left;
+}
+.feed_back_form .target_container .input_container label {
+  padding-left: 0px;
 }
 /* _module */
 .accordion-header {
@@ -271,7 +343,7 @@ h3 {
   display: block;
 }
 .accordion-header > h3 {
-  font-size: 18px;
+  font-size: 16px;
 }
 .accordion-content {
   border-bottom: 3px solid #2e3192;
@@ -301,7 +373,8 @@ h3 {
   transition: 0.3s;
   padding: 3px 6px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: bold;
   float: right;
 }
 .accordion-content .show:hover {
@@ -315,6 +388,7 @@ h3 {
 }
 .chek-container div h4 {
   margin-bottom: 10px;
+  font-size: 14px;
 }
 .chek-container div input {
   display: none;
@@ -360,6 +434,13 @@ h3 {
 .input-container label {
   display: block;
   padding-bottom: 4px;
+}
+.product .product_text {
+  font-size: 12px;
+}
+.product .product_text .mame {
+  font-size: 15.5px;
+  font-weight: bold;
 }
 /* state */
 /* accordion */
