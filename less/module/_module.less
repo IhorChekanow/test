@@ -3,6 +3,9 @@
 	border: 1px solid @accordion_bg_color;
 	padding: 5px 10px 5px;
 	.transition;
+	padding-right: 20px;
+    position: relative;
+    overflow: hidden;
 
 	a{
 		display: block;
@@ -10,6 +13,14 @@
 
 	&>h3{
 		font-size: 16px;
+	}
+
+	i{
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    bottom: 0px;
+    line-height: 34px;
 	}
 }
 
@@ -51,44 +62,20 @@
 			padding: 3px 12px;
 			font-size: 12px;
 			cursor: pointer;
+
+			i{
+				padding-right: 5px;
+				color: @theme_color;
+			}
 		}
-
-		input[type="checkbox"], 
-		input[type="radio"]{
-
-			&+label::before {
-			content: "";
-			display: inline-block;
-			height: @custom_chek_w;
-			width: @custom_chek_w;
-			margin: 0 5px 0 0;
-			background-color: green;
-			vertical-align: baseline;
-			}
-
-			&:checked+label::before {
-			   background-color: red;
-			}
-
-			&:disabled + label::before {
-			background-color: gray;
-			}
-
-			&:checked:disabled + label::before {
-			background-color: black;
-			}
-
-		}
-
 	}
 
 
 	.price-container{
 		padding: 0px 20px;
 
-		h3{
-			    font-size: 16px;
-			    margin-bottom: 10px;
+		h4{
+			 &:extend(.chek-container div h4);
 		}
 	}
 
@@ -102,13 +89,47 @@
 	}
 
 	.product{
+		@margin: 0.5%;
+		
+		float: left;
+		width: (100% / 2) - @margin;
+		padding: 10px 20px;
+	    margin: 10px 0px;
+	    margin-left: @margin;
+        border-left: 3px solid @theme_color;
+        .transition;
 
-		.product_text{
+        @img_w: 40%;
+        @text_w: 100% - @img_w ;
+
+		&_text{
 			font-size: 12px;
+			width: @text_w;
+			padding-left: 5%;
 
-			.mame{
+
+			h4{
 				font-size: 15.5px;
 				font-weight: bold;
+				margin-bottom: 3px;
 			}
+		}
+
+		&_view{
+			width: @img_w;
+
+			img{
+				width: 100%;
+			}
+		}
+
+		&_view,
+		&_text{
+			float: left;			
+		}
+
+		&:hover{
+			.box-shadow(0px 0px 3px 0px fade(@theme_color, 18%));
+			background-color:  fade(@theme_color, 18%);
 		}
 	}

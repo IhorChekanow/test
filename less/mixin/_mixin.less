@@ -48,6 +48,12 @@ box-sizing: @box-model;
  transition: @transition;
 }
 
+.box-shadow (@string) {
+    -webkit-box-shadow: @string;
+    -moz-box-shadow:    @string;
+    box-shadow:         @string;
+}
+
 .golden_section(@n:1){
   width: (100% / 3) * @n;
 }
@@ -62,19 +68,23 @@ box-sizing: @box-model;
 
 .theme_button(){
     background-color: @theme_color;
+    background: url(../image/block_2.png) top left  no-repeat;
+    background-size: cover;
     color: @color_white;
     border: none;
     box-shadow: none;
     outline: none;
     .borderRadius(0px);
     .transition();
-    padding: 3px 6px;
+    padding: 3px 6px 3px 23px;
     cursor: pointer;
     font-size: 12px;
     font-weight: bold;
 
     &:hover{
     color: @color_black;  
+    background-position-x: -12px;
+    background-color: @theme_color;
     }
 }
 
@@ -83,26 +93,6 @@ box-sizing: @box-model;
     color: @color_white;
     padding: 5px 10px 11px;
 }
-
-
-// .font(@fontName; @urlName: @fontName; @weight: normal; @style: normal) {
-//   font-family: '@{fontName}';
-//   src: url('/fonts/@{urlName}/@{urlName}.eot');
-//   src: url('/fonts/@{urlName}/@{urlName}.eot#iefix') format('embedded-opentype'),
-//   url('/fonts/@{urlName}/@{urlName}.woff') format('woff'),
-//     url('/fonts/@{urlName}/@{urlName}.ttf') format('truetype'),
-//     url('/fonts/@{urlName}/@{urlName}.svg') format('svg');
-//     font-weight: @weight;
-//     font-style: @style;
-// }
-
-// .loadFont(@Weight; @Name; @Local; @Ttf:'../fonts/@{Local}.ttf'; @Woff:'@{Local}.woff'){
-//     font-family: @Name;
-//     font-style: normal;
-//     font-weight: @Weight;
-//     src: url(@Ttf);
-//     // src: local(@Name), local(@Local), url(@Ttf) format('embedded-opentype'), url(@Woff) format('woff');
-// }
 
 .font(@weight:normal; @size:16px; @font-family: ArialMT , sans-serif){
     font:@arguments;

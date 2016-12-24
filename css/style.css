@@ -212,13 +212,33 @@ textarea {
   -moz-border-radius: 5px;
   -o-border-radius: 5px;
   border-radius: 5px;
+  resize: none;
 }
 [type="text"],
 [type="email"],
 textarea {
   border: 1px solid #888;
   font-size: 12px;
-  padding: 2px;
+  padding: 2px 5px;
+  -ms-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+}
+[type="text"]:hover,
+[type="email"]:hover,
+textarea:hover,
+[type="text"]:focus,
+[type="email"]:focus,
+textarea:focus {
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(102, 102, 102, 0.46);
+  -moz-box-shadow: 1px 1px 1px 0px rgba(102, 102, 102, 0.46);
+  box-shadow: 1px 1px 1px 0px rgba(102, 102, 102, 0.46);
+}
+[type="text"]:focus,
+[type="email"]:focus,
+textarea:focus {
+  border-color: #2e3192;
 }
 /* layuot */
 #header {
@@ -267,6 +287,19 @@ textarea {
   color: #FFF;
   font-size: 20px;
   padding: 5px 10px 11px;
+  position: relative;
+}
+#sidebar > h2:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 100%;
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 10px solid #2e3192;
+  border-top: 0px;
+  border-bottom: 34px solid transparent;
 }
 #main_content {
   width: 80%;
@@ -275,7 +308,19 @@ textarea {
   padding: 12px;
 }
 .feed_back_form {
-  padding: 16px 16px 0px;
+  padding: 16px 0px 0px;
+  border-bottom: 3px solid #2e3192;
+  margin-bottom: 30px;
+}
+.feed_back_form:before,
+.feed_back_form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.feed_back_form > *:not(.btn) {
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .feed_back_form h3 {
   color: #2e3192;
@@ -307,7 +352,8 @@ textarea {
   width: 100%;
 }
 .feed_back_form .target_container {
-  padding: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .feed_back_form .target_container:before,
 .feed_back_form .target_container:after {
@@ -329,6 +375,15 @@ textarea {
 .feed_back_form .target_container .input_container label {
   padding-left: 0px;
 }
+.feed_back_form .feed_back_btn {
+  margin-top: 25px;
+}
+.products_list:before,
+.products_list:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 /* _module */
 .accordion-header {
   cursor: pointer;
@@ -338,12 +393,22 @@ textarea {
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   transition: 0.3s;
+  padding-right: 20px;
+  position: relative;
+  overflow: hidden;
 }
 .accordion-header a {
   display: block;
 }
 .accordion-header > h3 {
   font-size: 16px;
+}
+.accordion-header i {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  bottom: 0px;
+  line-height: 34px;
 }
 .accordion-content {
   border-bottom: 3px solid #2e3192;
@@ -357,8 +422,11 @@ textarea {
 .accordion-content .chek-container > div:last-child {
   margin-bottom: 5px;
 }
-.accordion-content .show {
+.accordion-content .show,
+.feed_back_form .feed_back_btn {
   background-color: #2e3192;
+  background: url(../image/block_2.png) top left no-repeat;
+  background-size: cover;
   color: #FFF;
   border: none;
   box-shadow: none;
@@ -371,14 +439,17 @@ textarea {
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   transition: 0.3s;
-  padding: 3px 6px;
+  padding: 3px 6px 3px 23px;
   cursor: pointer;
   font-size: 12px;
   font-weight: bold;
   float: right;
 }
-.accordion-content .show:hover {
+.accordion-content .show:hover,
+.feed_back_form .feed_back_btn:hover {
   color: #000;
+  background-position-x: -12px;
+  background-color: #2e3192;
 }
 .chek-container {
   padding: 10px 20px;
@@ -386,7 +457,8 @@ textarea {
 .chek-container div {
   margin-bottom: 15px;
 }
-.chek-container div h4 {
+.chek-container div h4,
+.price-container h4 {
   margin-bottom: 10px;
   font-size: 14px;
 }
@@ -399,34 +471,12 @@ textarea {
   font-size: 12px;
   cursor: pointer;
 }
-.chek-container input[type="checkbox"] + label::before,
-.chek-container input[type="radio"] + label::before {
-  content: "";
-  display: inline-block;
-  height: 8px;
-  width: 8px;
-  margin: 0 5px 0 0;
-  background-color: green;
-  vertical-align: baseline;
-}
-.chek-container input[type="checkbox"]:checked + label::before,
-.chek-container input[type="radio"]:checked + label::before {
-  background-color: red;
-}
-.chek-container input[type="checkbox"]:disabled + label::before,
-.chek-container input[type="radio"]:disabled + label::before {
-  background-color: gray;
-}
-.chek-container input[type="checkbox"]:checked:disabled + label::before,
-.chek-container input[type="radio"]:checked:disabled + label::before {
-  background-color: black;
+.chek-container label i {
+  padding-right: 5px;
+  color: #2e3192;
 }
 .price-container {
   padding: 0px 20px;
-}
-.price-container h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
 }
 .input-container {
   margin-bottom: 10px;
@@ -435,24 +485,67 @@ textarea {
   display: block;
   padding-bottom: 4px;
 }
-.product .product_text {
-  font-size: 12px;
+.product {
+  float: left;
+  width: 49.5%;
+  padding: 10px 20px;
+  margin: 10px 0px;
+  margin-left: 0.5%;
+  border-left: 3px solid #2e3192;
+  -ms-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
 }
-.product .product_text .mame {
+.product_text {
+  font-size: 12px;
+  width: 60%;
+  padding-left: 5%;
+}
+.product_text h4 {
   font-size: 15.5px;
   font-weight: bold;
+  margin-bottom: 3px;
+}
+.product_view {
+  width: 40%;
+}
+.product_view img {
+  width: 100%;
+}
+.product_view,
+.product_text {
+  float: left;
+}
+.product:hover {
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(46, 49, 146, 0.18);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(46, 49, 146, 0.18);
+  box-shadow: 0px 0px 3px 0px rgba(46, 49, 146, 0.18);
+  background-color: rgba(46, 49, 146, 0.18);
 }
 /* state */
 /* accordion */
-.accordion-content {
-  display: none;
-}
 .accordion-header:hover {
   background-color: #b9beea;
+}
+.accordion-header i {
+  color: #2e3192;
+}
+.accordion-header .fa-minus-circle {
+  display: none;
 }
 .accordion-header.open {
   color: #FFF;
   border-color: #2e3192;
+}
+.accordion-header.open i {
+  color: #FFF;
+}
+.accordion-header.open .fa-minus-circle {
+  display: inline-block;
+}
+.accordion-header.open .fa-plus-circle {
+  display: none;
 }
 .accordion-header.open,
 .accordion-header.open:hover {
@@ -460,4 +553,35 @@ textarea {
 }
 .accordion-header.open + .accordion-content {
   display: block;
+}
+/* radiobuttons&chekboxes */
+.chek-container input[type="checkbox"]:checked:disabled + label .fa,
+.chek-container input[type="radio"]:checked:disabled + label .fa,
+.chek-container input[type="checkbox"]:disabled + label .fa,
+.chek-container input[type="radio"]:disabled + label .fa {
+  background-color: #b9beea;
+}
+.chek-container input[type="checkbox"] + label .fa-check-square,
+.chek-container input[type="checkbox"]:disabled + label .fa-check-square {
+  display: none;
+}
+.chek-container input[type="checkbox"]:checked + label .fa-square-o,
+.chek-container input[type="checkbox"]:checked:disabled + label .fa-square-o {
+  display: none;
+}
+.chek-container input[type="checkbox"]:checked + label .fa-check-square,
+.chek-container input[type="checkbox"]:checked:disabled + label .fa-check-square {
+  display: inline-block;
+}
+.chek-container input[type="radio"] + label .fa-circle,
+.chek-container input[type="radio"]:disabled + label .fa-circle {
+  display: none;
+}
+.chek-container input[type="radio"]:checked + label .fa-circle-thin,
+.chek-container input[type="radio"]:checked:disabled + label .fa-circle-thin {
+  display: none;
+}
+.chek-container input[type="radio"]:checked + label .fa-circle,
+.chek-container input[type="radio"]:checked:disabled + label .fa-circle {
+  display: inline-block;
 }

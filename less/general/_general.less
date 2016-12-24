@@ -22,6 +22,7 @@ h3{
 
 textarea{
 	.borderRadius(5px);
+	resize: none;
 }
 
 [type="text"],
@@ -29,6 +30,16 @@ textarea{
 textarea{
 	border: 1px solid @input_bd_color;
 	font-size: 12px;
-    padding: 2px;
+    padding: 2px 5px;
+    .transition;
+
+	&:hover,
+	&:focus {
+	.box-shadow(1px 1px 1px 0px fade( lighten(@color_black, 40%), 46%));
+	}
+
+	&:focus{
+	border-color: @theme_color;
+	}
 }
 

@@ -6,24 +6,29 @@ jQuery(document).ready(function($) {
 	$(function($) {
   var allAccordions = $('.accordion .accordion-content');
   var allAccordionItems = $('.accordion .accordion-header');
+
+  allAccordionItems.not('.open').next().hide();
+
   $('.accordion > .accordion-header').click(function(e) {
 
     /* If the header block has a class Open, then hide the panel */
+
+    var time_slide_effect = 500;
     
     if($(this).hasClass('open'))
     {
       $(this).removeClass('open');
-      $(this).next().slideUp("slow");
+      $(this).next().slideUp(time_slide_effect);
     }
 
     /* else, then show the panel */
 
     else
     {
-    allAccordions.slideUp("slow");
+    allAccordions.slideUp(time_slide_effect);
     allAccordionItems.removeClass('open');
     $(this).addClass('open');
-    $(this).next().slideDown("slow");
+    $(this).next().slideDown(time_slide_effect);
     return false;
     }
   });

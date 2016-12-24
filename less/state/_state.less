@@ -3,18 +3,42 @@
 
 .accordion{
 
-	&-content{
-		display: none;
-	}
+	// &-content{
+	// 	display: none;
+	// }
 
 	&-header:hover{
 		background-color: @accordion_bg_color;
+	}
+
+	&-header{
+
+		i{
+			color: @theme_color;
+		}
+
+		.fa-minus-circle{
+			display: none;
+		}
 	}
 
 	&-header.open
 	{
 	color: @color_white;
 	border-color: @theme_color;
+
+		i{
+		color: @color_white;
+		}
+
+		.fa-minus-circle{
+			display: inline-block;
+
+		}
+
+		.fa-plus-circle{
+		display: none;
+		}
 	}
 
 	&-header.open,
@@ -28,3 +52,54 @@
 	}
 
 }
+
+/* radiobuttons&chekboxes */
+
+.chek-container{
+
+		input[type="checkbox"], 
+		input[type="radio"]{
+
+			&:checked:disabled + label .fa,
+			&:disabled + label .fa{
+				background-color:  @accordion_bg_color;
+			}
+		}
+
+		input[type="checkbox"]{
+
+			&+label .fa-check-square,
+			&:disabled + label .fa-check-square{
+				display: none;
+			}
+
+			&:checked+label .fa-square-o,
+			&:checked:disabled + label .fa-square-o{
+				display: none;
+			}
+
+			&:checked+label .fa-check-square,
+			&:checked:disabled + label .fa-check-square{
+				display: inline-block;
+			}
+		}
+
+		input[type="radio"]{
+
+			&+label .fa-circle,
+			&:disabled + label .fa-circle{
+				display: none;
+			}
+
+			&:checked+label .fa-circle-thin,
+			&:checked:disabled + label .fa-circle-thin{
+				display: none;
+			}
+
+			&:checked+label .fa-circle,
+			&:checked:disabled + label .fa-circle{
+				display: inline-block;
+			}
+		}
+}
+
