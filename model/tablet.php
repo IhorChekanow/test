@@ -7,7 +7,7 @@ $link=mysqli_connect("localhost", "root", "", "formbase");
 //Запрос
 	//$query = "SELECT `ID`,`name`,`company`,`screen`,`RAM`, `color`, `description`, `price`, `image` FROM `products`"; //запрос -2
 	//Начало фильтров
-$query="SELECT * FROM `products` WHERE 1";
+$query="SELECT * FROM `tablets` WHERE 1";
 if ($_POST['how_many']!='all')
 {
 	//фильтр company
@@ -22,27 +22,24 @@ if ($_POST['how_many']!='all')
 	/*if (isset($_POST['screen']))
 		$query .= " AND `screen` IN ('".implode("','", $_POST['screen'])."')";	*/			  
 					  //фильтр RAM
-	if (isset($_POST['ram_max']))
-	 $query .= " AND `RAM` <= ".$_POST['ram_max'];
-					  //фильтр min price
-	 if (isset($_POST['ram_min']))
-	 $query .= " AND `RAM` >= ".$_POST['ram_min'];
+	if (isset($_POST['memory']))
+	 $query .= " AND `RAM` IN (".implode(",", $_POST['memory']).")";
 	/*if (isset($_POST['ram']))
-		$query .= " AND `RAM` IN ('".implode("','", $_POST['ram'])."')";	*/			  
+		$query .= " AND `RAM` IN ('".implode("','", $_POST['ram'])."')";	*/				  
 					  //фильтр color
 					  if (isset($_POST['color']))
 	 $query .= " AND `color`='".$_POST['color']."'";				  
 					  //фильтр max price
 	if (isset($_POST['price_max']))
-	 $query .= " AND `price` <= ".$_POST['price_max'];
+	 $query .= " AND `price` < ".$_POST['price_max'];
 					  //фильтр min price
 	 if (isset($_POST['price_min']))
-	 $query .= " AND `price` >= ".$_POST['price_min'];	
+	 $query .= " AND `price` > ".$_POST['price_min'];	
 
 }
 echo $query;
 	
-echo '<h3 class="products_type">РўРµР»РµС„РѕРЅС‹</h3>
+echo '<h3 class="products_type">Tablets</h3>
 	<ul class="products_list">';
 		//Послыка запроса к БД, ответ передаем переменной $array - 3
 		$array=mysqli_query($link, $query);
@@ -74,7 +71,7 @@ echo '<h3 class="products_type">РўРµР»РµС„РѕРЅС‹</h3>
 						</div>
 						<div class="product_color">
 							<span class="product_title">Р¦РІРµС‚:</span>
-							<span class="ram">'.$array2['color'].'</span>
+							<span class="color">'.$array2['color'].'</span>
 						</div>
 						<div class="product_description">
 							<span class="product_title">РћРїРёСЃР°РЅРёРµ С‚РѕРІР°СЂР°:</span>
