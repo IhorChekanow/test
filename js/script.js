@@ -1,6 +1,15 @@
 jQuery(document).ready(function($) {
 	
-
+var myWidth = 0;
+        myWidth = window.innerWidth;
+        jQuery('body').prepend('<div id="size" style="background:#000;padding:5px;position:fixed;z-index:999;color:#fff;">Width = '+myWidth+'</div>');
+        jQuery(window).resize(function(){
+            var myWidth = 0;
+            myWidth = window.innerWidth;
+            jQuery('#size').remove();
+            jQuery('body').prepend('<div id="size" style="background:#000;padding:5px;position:fixed;z-index:999;color:#fff;">Width = '+myWidth+'</div>');
+        });
+        
 /* script for accrdion */
 
 	$(function($) {
@@ -33,28 +42,6 @@ jQuery(document).ready(function($) {
     }
   });
 });
-
-	// $.ajax({
-	// type: "POST",
-	// url: "model/mobile.php",
-	// data: { name: "John", location: "Boston" }
-	// }).done(function( msg ) {
-	// alert( "Data Saved: " + msg );
-
-// $("type="submit"").submit(function(e) {
-//   /* Act on the event */
-// e.preventDefault;
-//   $('#main_content').load('model/mobile.php .poduct');
-
-// });
-
-// $("#mobile+form .show").click(function(event) {
-//   /* Act on the event */
-//   event.preventDefault();
-//   $('#main_content').load('model/mobile.php .poduct');
-// });
-
-	// });
 
 });
 

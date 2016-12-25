@@ -116,3 +116,11 @@ box-sizing: @box-model;
 @default_font_fam: ArialMT;
 @header_font_fam: MyriadPro;
 
+.media_min(@size,@rules) {
+    @px: px;
+    @size_px: e("@{size}@{px}");
+    @media (max-width: @size_px) {
+        @rules();
+    };
+};
+
