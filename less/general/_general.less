@@ -1,11 +1,12 @@
 body{
 	background-color: @base_color;
+	font-family: @default_font_fam;
 }
 
 h1{
-	 font-size: 30px;
+	.font(normal;29px;@header_font_fam);
     line-height: 30px;
-    margin: 19px 0px 7px ;
+    margin: 12px 0px 4px ;
 }
 
 h3{
@@ -13,9 +14,32 @@ h3{
 	line-height: 24px;
 }
 
-[type="text"]{
-	.borderRadius(0px);
-    border: 1px #CCC solid;
-    font-size: 14px;
-    padding: 2px;
+
+[type="text"],
+[type="email"]{
+	.borderRadius;
 }
+
+textarea{
+	.borderRadius(5px);
+	resize: none;
+}
+
+[type="text"],
+[type="email"],
+textarea{
+	border: 1px solid @input_bd_color;
+	font-size: 12px;
+    padding: 0px 5px;
+    .transition;
+
+	&:hover,
+	&:focus {
+	.box-shadow(1px 1px 1px 0px fade( lighten(@color_black, 40%), 46%));
+	}
+
+	&:focus{
+	border-color: @theme_color;
+	}
+}
+

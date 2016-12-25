@@ -18,21 +18,23 @@
 
 		#logo img{
 			width: auto;
-			height: 75px;
+			height: 60px;
 			margin: 3px 0px;
 		}
 
 		p{
-			font-size: 12px;
+			.font(normal; 11px; @header_font_fam);
+			color: @theme_color;
 		}
 }
 
-#main_contauner{
+#main_container{
 	.clearfix;
 }
 
-@sidebar_w: 20%;
+@sidebar_w: 18.6%;
 @main_content_w: 100% - @sidebar_w;
+
 
 #sidebar,
 #main_content{
@@ -43,10 +45,25 @@
 	width: @sidebar_w;
 	border-right: 1px solid @accordion_bg_color;
 
-	&>h3{
+	&>h2{
 	background: @theme_color;
     color: @color_white;
-    padding: 5px 10px 11px;
+    font-size: 19px;
+    padding: 0px 10px 5px;
+    position: relative;
+
+    &:after {
+    	content: '';
+    	position: absolute;
+    	top: 0;
+    	left:100%;
+    	 display: block;
+		  width: 0;
+		  height: 0;
+		  border-left: 10px solid @theme_color  ;
+		  border-top:  0px;
+		  border-bottom: (0 + 18 + 5)*1px solid  transparent ;
+	    }
 	}
 }
 
@@ -54,29 +71,107 @@
 	width: @main_content_w;
 
 	&>h3{
-	padding: 12px;
+	padding: 9px 12px 0px;
+	font-size: 21.5px;
 	}
 }
 
 .feed_back_form{
-	    padding: 16px 16px 0px;
+	    padding: 10px 0px 0px;
+		border-bottom:  3px solid @theme_color;
+		margin-bottom: 30px;
+		.clearfix;
+
+		&>*:not(.btn){
+			padding-left: 16px;
+			padding-right: 16px;
+		}
 
 	    h3{
 	    	color: @theme_color;
-	    	font-size: 20px;
-	    	margin-bottom: 10px;
+	    	font-size: 15.5px;
+	    	margin-bottom: 1px;
 	    }
 
 	    @label_w: 30%;
 	    @input_w: 100% - @label_w;
 
-	    .input_container input{
-	    	width: @input_w;
+	    .input_container{
+	    	.clearfix;
+	    	margin-bottom: 5px;
+
+			&.input_text>input,
+			&.input_text>label{
+			display: block;
+			float: left;
+			}
+
+			&.input_text input{
+			width: @input_w;
+			}
+
+			&.input_text label{
+			width:  @label_w;
+			font-size: 12px;
+			line-height: 16px;
+			}
 	    }
 
-	    .input_container label{
-	    	width:  @label_w;
+	    .client_message{
+	    	width: 100%;
 	    }
 
+	    .target_container{
+	    	.clearfix;
+	    	padding-top: 0px;
+	    	padding-bottom: 0px;
+
+	    	h4{
+			width:  @label_w;
+			padding: 0px;
+			line-height: 16px;
+			}
+
+			h4+div{
+			width: @input_w;
+			}
+
+			&>*{
+				display: block;
+				float: left;
+			}
+
+			.input_container label{
+			padding-left: 0px;
+			}
+
+	    }
+
+	    .feed_back_btn {
+	    	
+	    	&:extend(.accordion-content .show all);
+	    	margin-top: 16px;
+
+	    }
 }
+
+.products_list{
+	.clearfix;
+}
+
+
+.media_min(984, {
+
+	@sidebar_w: 22%;
+	@main_content_w: 100% - @sidebar_w;
+
+	#main_content{
+	width: @main_content_w;
+	}
+
+	#sidebar{
+	width: @sidebar_w;
+	}
+
+});
 

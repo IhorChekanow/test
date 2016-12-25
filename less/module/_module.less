@@ -1,16 +1,39 @@
 .accordion-header {
 	cursor: pointer;
 	border: 1px solid @accordion_bg_color;
-	padding: 5px 10px 5px;
+	padding: 0px 10px 0px;
 	.transition;
+	padding-right: 20px;
+    position: relative;
+    overflow: hidden;
 
 	a{
 		display: block;
 	}
 
 	&>h3{
-		font-size: 18px;
+		font-size: 15px;
+		line-height: 21.1px;
 	}
+
+	i{
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    bottom: 0px;
+    line-height: 20px;
+	}
+
+	.media_min(1124,{
+	padding-right: 10px;
+
+		i,
+		&.open>i.fa{
+		display: none;
+		}
+
+	});
+
 }
 
 .accordion-content{
@@ -32,11 +55,12 @@
 		padding: 10px 20px;
 
 		div{
-			    margin-bottom: 15px;
+			    margin-bottom: 11.5px;
 		}
 
 		div h4{
-			margin-bottom: 10px;
+			margin-bottom: 0px;
+			font-size: 14px;
 		}
 
 		div input{
@@ -47,47 +71,25 @@
 
 		label{
 			display: block;
-			padding: 3px 12px;
+			padding: 1.1px 12px 1px;
 			font-size: 12px;
+			line-height: 12px;
 			cursor: pointer;
+
+			i{
+				padding-right: 2px;
+				color: @theme_color;
+				font-size: 8.5px;
+			}
 		}
-
-		input[type="checkbox"], 
-		input[type="radio"]{
-
-			&+label::before {
-			content: "";
-			display: inline-block;
-			height: @custom_chek_w;
-			width: @custom_chek_w;
-			margin: 0 5px 0 0;
-			background-color: green;
-			vertical-align: baseline;
-			}
-
-			&:checked+label::before {
-			   background-color: red;
-			}
-
-			&:disabled + label::before {
-			background-color: gray;
-			}
-
-			&:checked:disabled + label::before {
-			background-color: black;
-			}
-
-		}
-
 	}
 
 
 	.price-container{
 		padding: 0px 20px;
 
-		h3{
-			    font-size: 16px;
-			    margin-bottom: 10px;
+		h4{
+			 &:extend(.chek-container div h4);
 		}
 	}
 
@@ -97,5 +99,79 @@
 		label{
 			display: block;
 			padding-bottom: 4px;
+		}
+	}
+
+	.product{
+		@margin: 0.5%;
+		float: left;
+		width: (100% / 2) - @margin;
+		padding: 7px 20px;
+	    margin-left: @margin;
+        // border-left: 3px solid @theme_color;
+        position: relative;
+        overflow: hidden;
+        .transition;
+
+        &:after {
+        	@height: 80%;
+        	@pos: (100% - @height) / 2;
+        	content: '';
+        	position: absolute;
+        	left: 0;
+        	bottom: @pos;
+        	top: @pos;
+        	width: 3px;
+        	height: @height;
+        	background-color: @theme_color;
+        	.transition;
+        }
+
+        @img_w: 40%;
+        @text_w: 100% - @img_w ;
+
+		&_text{
+			font-size: 12px;
+			width: @text_w;
+			padding-left: 3%;
+
+			h4{
+				font-size: 15.5px;
+				font-weight: bold;
+			}
+		}
+
+		&_name~*{
+			    line-height: 14px;
+			    font-size: 12px;
+		}
+
+		&_view{
+			width: @img_w;
+			margin-top: 12px;
+
+
+
+			img{
+				width: 100%;
+			}
+		}
+
+		&_view,
+		&_text{
+			float: left;			
+		}
+
+		&:hover{
+			.box-shadow(0px 0px 3px 0px fade(@theme_color, 18%));
+			background-color:  fade(@theme_color, 18%);
+
+			&:after {
+			@height: 100%;
+			@pos: (100% - @height) / 2;
+			bottom: @pos;
+			top: @pos;
+			height: @height;
+			}
 		}
 	}
