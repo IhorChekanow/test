@@ -2,37 +2,39 @@
 
 
 require_once( "config.php" ); 
-//ГЇГҐГ°Г¬ГҐГ­Г­Г»ГҐ Г¤Г«Гї ГЇГ®Г¤ГЄГ«ГѕГ·ГҐГ­ГЁГї ГЄ ГЎГ Г§ГҐ Г¤Г Г­Г­Г»Гµ - 1
+//перменные для подключения к базе данных - 1
 $link=mysqli_connect("localhost", "root", "", "formbase");
-//Г‡Г ГЇГ°Г®Г±
-	//$query = "SELECT `ID`,`name`,`company`,`screen`,`RAM`, `color`, `description`, `price`, `image` FROM `products`"; //Г§Г ГЇГ°Г®Г± -2
-	//ГЌГ Г·Г Г«Г® ГґГЁГ«ГјГІГ°Г®Гў
+//Запрос
+	//$query = "SELECT `ID`,`name`,`company`,`screen`,`RAM`, `color`, `description`, `price`, `image` FROM `products`"; //запрос -2
+	//Начало фильтров
 $query="SELECT * FROM `tablets` WHERE 1";
 if ($_POST['how_many']!='all')
 {
-	//ГґГЁГ«ГјГІГ° company
+	//фильтр company
 	if (isset($_POST['companie']))
-		$query .= " AND `company` IN ('".implode("','", $_POST['companie'])."')"; ///!!!!!! ГЋГЎГ°Г ГІГЁ ГўГ­ГЁГ¬Г Г­ГЁГҐ Г­Г  ГЄГ®ГўВіГ·ГЄГЁ
-					  //ГґГЁГ«ГјГІГ° screen
+		$query .= " AND `company` IN ('".implode("','", $_POST['companie'])."')"; ///!!!!!! Обрати внимание на ковічки
+					  //фильтр screen
 	if (isset($_POST['screen_max']))
 	 $query .= " AND `screen` <= ".$_POST['screen_max'];
-					  //ГґГЁГ«ГјГІГ° min price
+					  //фильтр min price
 	 if (isset($_POST['screen_min']))
 	 $query .= " AND `screen` >= ".$_POST['screen_min'];				  
 	/*if (isset($_POST['screen']))
 		$query .= " AND `screen` IN ('".implode("','", $_POST['screen'])."')";	*/			  
-					  //ГґГЁГ«ГјГІГ° RAM
+					  //фильтр RAM
+
 	if (isset($_POST['memory']))
 	 $query .= " AND `RAM` IN (".implode(",", $_POST['memory']).")";
 	/*if (isset($_POST['ram']))
 		$query .= " AND `RAM` IN ('".implode("','", $_POST['ram'])."')";	*/				  
-					  //ГґГЁГ«ГјГІГ° color
+
+					  //фильтр color
 					  if (isset($_POST['color']))
 	 $query .= " AND `color`='".$_POST['color']."'";				  
-					  //ГґГЁГ«ГјГІГ° max price
+					  //фильтр max price
 	if (isset($_POST['price_max']))
 	 $query .= " AND `price` < ".$_POST['price_max'];
-					  //ГґГЁГ«ГјГІГ° min price
+					  //фильтр min price
 	 if (isset($_POST['price_min']))
 	 $query .= " AND `price` > ".$_POST['price_min'];	
 
@@ -41,11 +43,11 @@ echo $query;
 	
 echo '<h3 class="products_type">Tablets</h3>
 	<ul class="products_list">';
-		//ГЏГ®Г±Г«Г»ГЄГ  Г§Г ГЇГ°Г®Г±Г  ГЄ ГЃГ„, Г®ГІГўГҐГІ ГЇГҐГ°ГҐГ¤Г ГҐГ¬ ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г®Г© $array - 3
+		//Послыка запроса к БД, ответ передаем переменной $array - 3
 		$array=mysqli_query($link, $query);
-		//Г°Г Г§ГЎГЁГ°Г ГҐГ¬ Г®ГІГўГҐГІ ГЃГ„ Г­Г  Г Г±Г®Г¶ГЁГ ГІГЁГўГ­Г»Г© Г¬Г Г±Г±ГЁГў ГЁ ГЇГҐГ°ГҐГ¤Г ГҐГ¬ ГҐГЈГ® ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г®Г© $array2
+		//разбираем ответ БД на асоциативный массив и передаем его переменной $array2
 		while($array2=mysqli_fetch_array($array))
-		//ГЁ ГЇГ®ГЄГ  Гў ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г®Г© $array ГҐГ±ГІГј Г¤Г Г­Г­Г»ГҐ Г¤Г«Гї ГґГ®Г°Г¬ГЁГ°Г®ГўГ Г­ГЁГї Г¬Г Г±Г±ГЁГўГ  
+		//и пока в переменной $array есть данные для формирования массива 
 		//dsgjkyztv cktle.obq rjl
 		{
 			echo '<li class="poduct">
@@ -54,38 +56,38 @@ echo '<h3 class="products_type">Tablets</h3>
 					</div>
 					<div class="product_text">
 						<div class="product_name">
-							<span class="product_title">ГђВќГђВ°ГђВёГђВјГђВµГђВЅГђВѕГђВІГђВ°ГђВЅГђВёГђВµ:</span>
+							<span class="product_title">РќР°РёРјРµРЅРѕРІР°РЅРёРµ:</span>
 							<span class="name">'.$array2['name'].'</span>
 						</div>
 						<div class="product_companie">
-							<span class="product_title">ГђЕёГ‘в‚¬ГђВѕГђВёГђВ·ГђВІГђВѕГђВґГђВёГ‘вЂљГђВµГђВ»Г‘Е’:</span>
+							<span class="product_title">РџСЂРѕРёР·РІРѕРґРёС‚РµР»СЊ:</span>
 							<span class="companie">'.$array2['company'].'</span>
 						</div>
 						<div class="product_screen">
-							<span class="product_title">ГђвЂќГђВёГђВ°ГђВіГђВѕГђВЅГђВ°ГђВ»Г‘Е’ Г‘ВЌГђВєГ‘в‚¬ГђВ°ГђВЅГђВ°:</span>
+							<span class="product_title">Р”РёР°РіРѕРЅР°Р»СЊ СЌРєСЂР°РЅР°:</span>
 							<span class="screen">'.$array2['screen'].'</span>
 						</div>
 						<div class="product_ram">
-							<span class="product_title">ГђЕѕГђВїГђВµГ‘в‚¬ГђВ°Г‘вЂљГђВёГђВІГђВЅГђВ°Г‘ВЏ ГђВїГђВ°ГђВјГ‘ВЏГ‘вЂљГ‘Е’:</span>
+							<span class="product_title">РћРїРµСЂР°С‚РёРІРЅР°СЏ РїР°РјСЏС‚СЊ:</span>
 							<span class="ram">'.$array2['RAM'].'</span>
 						</div>
 						<div class="product_color">
-							<span class="product_title">ГђВ¦ГђВІГђВµГ‘вЂљ:</span>
+							<span class="product_title">Р¦РІРµС‚:</span>
 							<span class="color">'.$array2['color'].'</span>
 						</div>
 						<div class="product_description">
-							<span class="product_title">ГђЕѕГђВїГђВёГ‘ВЃГђВ°ГђВЅГђВёГђВµ Г‘вЂљГђВѕГђВІГђВ°Г‘в‚¬ГђВ°:</span>
+							<span class="product_title">РћРїРёСЃР°РЅРёРµ С‚РѕРІР°СЂР°:</span>
 							<p class="description">'.$array2['description'].'</p>
 						</div>
 						<div class="product_price">
-							<span class="product_title">ГђВ¦ГђВµГђВЅГђВ°:</span>
+							<span class="product_title">Р¦РµРЅР°:</span>
 							<span class="price">'.$array2['price'].'</span>
 						</div>
 					</div>
 				</li>';
 			
 			
-			//ГґГ®Г°Г¬ГЁГ°Г®ГўГ Г­ГЁГҐ Г±ГІГ°Г®ГЄГЁ ГІГ ГЎГ«ГЁГ¶Г» <tr><td></td><td></td><td></td></tr>
+			//формирование строки таблицы <tr><td></td><td></td><td></td></tr>
 		}
 echo '</ul>';
 
