@@ -86,6 +86,20 @@ box-sizing: @box-model;
     background-position-x: -12px;
     background-color: @theme_color;
     }
+
+    .media_min(544, {
+    float: none;
+    margin: 0px auto 15px;
+    display: block;
+    padding: 3px 6px;
+    .box-shadow (1px 1px 1px @color_black);
+
+    &:hover,
+    &{
+    background: @theme_color;
+    }
+
+    });
 }
 
 .sidebar_h3(){

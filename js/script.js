@@ -1,5 +1,7 @@
 jQuery(document).ready(function($) {
-	
+
+  /* The script for the measurement of the width of the screen */
+  
 // var myWidth = 0;
 //         myWidth = window.innerWidth;
 //         jQuery('body').prepend('<div id="size" style="background:#000;padding:5px;position:fixed;z-index:999;color:#fff;">Width = '+myWidth+'</div>');
