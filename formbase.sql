@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 27 2016 г., 19:51
+-- Время создания: Дек 27 2016 г., 22:22
 -- Версия сервера: 5.5.48
 -- Версия PHP: 5.3.29
 
@@ -72,10 +72,10 @@ CREATE TABLE IF NOT EXISTS `products` (
 --
 
 INSERT INTO `products` (`ID`, `name`, `company`, `screen`, `RAM`, `color`, `description`, `price`, `image`) VALUES
-(1, 'iphone66', 'asus', '6.1', '4', 'red', 'best iphone', 9999, 'products/mobile_red.jpg'),
-(2, 'galaxyc7', 'samsung', '5.1', '3', 'silver', 'very cool phone', 7000, 'products/mobile_silver.jpg'),
-(3, 'london_black', 'nokia', '4.1', '2', 'black', 'cheap black stylish phone', 3000, 'products/mobile_black.jpg'),
-(4, 'Lucky 123', 'LG', '4', '1', 'white', 'very cheap phone', 1500, 'products/mobile_white.jpg');
+(1, 'iphone66', 'asus', '6.1', '4', 'red', 'best iphone', 9999, 'products/mobile/mobile_red.jpg'),
+(2, 'galaxyc7', 'samsung', '5.1', '3', 'silver', 'very cool phone', 7000, 'products/mobile/mobile_silver.jpg'),
+(3, 'london_black', 'nokia', '4.1', '2', 'black', 'cheap black stylish phone', 3000, 'products/mobile/mobile_black.jpg'),
+(4, 'Lucky 123', 'LG', '4', '1', 'white', 'very cheap phone', 1500, 'products/mobile/mobile_white.jpg');
 
 -- --------------------------------------------------------
 
@@ -100,10 +100,10 @@ CREATE TABLE IF NOT EXISTS `tablets` (
 --
 
 INSERT INTO `tablets` (`ID`, `name`, `company`, `screen`, `RAM`, `color`, `description`, `price`, `image`) VALUES
-(5, 'red tablet', 'samsung', '7', '4', 'red', 'red teblet', 3456, 'products/tablet_red.jpg'),
-(6, 'black tablet', 'prestigio', '8', '16', 'black', 'clack tablrt', 6789, 'products/tablet_black.jpg'),
-(7, 'silver tablet', 'Lenova', '7.85', '2', 'silver', 'testu testo', 4239, 'products/tablet_silver.jpg'),
-(8, 'white powder s3', 'Asus', '10.1', '32', 'white', 'best tablet ever', 12000, 'products/tablet_white.jpg');
+(5, 'red tablet', 'samsung', '7', '4', 'red', 'red teblet', 3456, 'products/tablet/tablet_red.jpg'),
+(6, 'black tablet', 'prestigio', '8', '16', 'black', 'clack tablrt', 6789, 'products/tablet/tablet_black.jpg'),
+(7, 'silver tablet', 'Lenova', '7.85', '2', 'silver', 'testu testo', 4239, 'products/tablet/tablet_silver.jpg'),
+(8, 'white powder s3', 'Asus', '10.1', '32', 'white', 'best tablet ever', 12000, 'products/tablet/tablet_white.jpg');
 
 --
 -- Индексы сохранённых таблиц
