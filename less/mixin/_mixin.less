@@ -79,7 +79,7 @@ box-sizing: @box-model;
     padding: 3px 6px 3px 23px;
     cursor: pointer;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 500;
 
     &:hover{
     color: @color_black;  
@@ -89,16 +89,22 @@ box-sizing: @box-model;
 
     .media_min(544, {
     float: none;
-    margin: 0px auto 15px;
+    margin: 30px auto 15px;
     display: block;
-    padding: 3px 6px;
-    .box-shadow (1px 1px 1px @color_black);
+    // padding: 3px 6px;
+    .box-shadow(3px 3px 1px @color_black);
 
     &:hover,
     &{
     background: @theme_color;
     }
 
+    });
+
+    .media_min(544{
+    width: 39%;
+    padding: 6px 4% 6px 4%;
+    font-size: 23px;
     });
 }
 
